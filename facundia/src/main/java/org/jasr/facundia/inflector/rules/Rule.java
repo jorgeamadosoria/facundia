@@ -1,4 +1,4 @@
-package org.jasr.facundia.rules;
+package org.jasr.facundia.inflector.rules;
 
 public interface Rule {
 

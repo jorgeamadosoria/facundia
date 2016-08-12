@@ -1,8 +1,8 @@
-package org.jasr.facundia.rules;
+package org.jasr.facundia.inflector.rules;
 
-public class Rule2 extends BaseRule {
+public class OneLetter extends BaseRule {
 
-    public Rule2() {
+    public OneLetter() {
        super("\\w{1,1}");
     }
 

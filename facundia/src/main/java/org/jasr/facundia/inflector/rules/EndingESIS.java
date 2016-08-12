@@ -1,8 +1,8 @@
-package org.jasr.facundia.rules;
+package org.jasr.facundia.inflector.rules;
 
-public class Rule10 extends BaseRule {
+public class EndingESIS extends BaseRule {
 
-    public Rule10() {
+    public EndingESIS() {
         super(".*(es|is)");
     }
 

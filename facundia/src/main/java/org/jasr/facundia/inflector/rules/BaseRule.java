@@ -1,11 +1,14 @@
-package org.jasr.facundia.rules;
+package org.jasr.facundia.inflector.rules;
 
 import java.util.regex.Pattern;
+
+import org.jasr.facundia.inflector.Utils;
 
 public abstract class BaseRule implements Rule {
 
    
     protected Pattern                   rule;
+    protected Utils exceptions = Utils.INSTANCE;
 
     public BaseRule(String pattern) {
         rule = Pattern.compile(pattern);
@@ -19,12 +22,6 @@ public abstract class BaseRule implements Rule {
     
     public String apply(String singular) {
         if (doesApply(singular)) {
-            if (Exceptions.exceptions.contains(singular))
-                return singular;
-            if (Exceptions.contains(singular))
-                return Exceptions.get(singular);
-
-
             return doApply(singular);
         }
         return null;

@@ -1,8 +1,8 @@
-package org.jasr.facundia.rules;
+package org.jasr.facundia.inflector.rules;
 
-public class Rule8 extends BaseRule {
+public class EndingVowY extends BaseRule {
 
-    public Rule8() {
+    public EndingVowY() {
         super(".*(a|e|i|o|u)y");
         
     }

@@ -2,6 +2,7 @@ package org.jasr.facundia.rules;
 
 import java.util.regex.Pattern;
 
+import org.jasr.facundia.inflector.rules.EndingN;
 import org.jasr.facundia.ordinal.OrdinalNumber;
 
 public class WordListExtract3 {
@@ -15,9 +16,9 @@ public class WordListExtract3 {
         System.out.println(ord.getText(str));*/
         
         
-        Rule11 rule = new Rule11();
+        EndingN rule = new EndingN();
         
-        System.out.println(rule.apply("cardumen"));
+        System.out.println(rule.apply("kibutz"));
         
     }
 }

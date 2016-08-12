@@ -1,8 +1,8 @@
-package org.jasr.facundia.rules;
+package org.jasr.facundia.inflector.rules;
 
-public class Rule7 extends BaseRule {
+public class EndingConsSX extends BaseRule {
 
-    public Rule7() {
+    public EndingConsSX() {
         super(".*(b|c|d|f|g|h|j|k|l|m|n|ñ|p|q|r|t|v|w|x|y|z)(s|x)");
     }
 

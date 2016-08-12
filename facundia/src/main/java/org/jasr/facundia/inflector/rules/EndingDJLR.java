@@ -1,8 +1,8 @@
-package org.jasr.facundia.rules;
+package org.jasr.facundia.inflector.rules;
 
-public class Rule4 extends BaseRule {
+public class EndingDJLR extends BaseRule {
 
-    public Rule4() {
+    public EndingDJLR() {
         super(".*(d|j|l|r)");
         
     }
