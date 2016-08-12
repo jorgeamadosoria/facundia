@@ -7,11 +7,12 @@ public class EndingGeneral extends BaseRule {
     }
 
     public String doApply(String singular) {
-            if (singular.endsWith("st"))
-                return singular;
-            if (singular.endsWith("club"))
-                return singular + "es";
-            return singular + "s";
+        return singular + "s";
+    }
+
+    @Override
+    public String getDescription() {
+        return "Las palabras que no forman plural según alguna de las otras reglas existentes, forman su plural adicionando 's' al final de la forma singular.";
     }
 
 }

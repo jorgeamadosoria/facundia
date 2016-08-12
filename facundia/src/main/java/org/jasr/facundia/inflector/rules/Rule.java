@@ -1,7 +1,10 @@
 package org.jasr.facundia.inflector.rules;
 
+import org.jasr.facundia.inflector.InflectionResult;
+
 public interface Rule {
 
-    String apply(String singular);
+    InflectionResult apply(String singular);
 
+    String getDescription();
 }

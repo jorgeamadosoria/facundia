@@ -10,4 +10,9 @@ public class EndingZ extends BaseRule {
            return singular.substring(0,singular.lastIndexOf("z")) + "ces";
     }
 
+    @Override
+    public String getDescription() {
+        return "Las palabras terminadas en 'z' forman plural reemplazando la 'z' final por -ces.";
+    }
+
 }
