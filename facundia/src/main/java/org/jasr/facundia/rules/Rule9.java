@@ -9,7 +9,7 @@ public class Rule9 extends BaseRule {
 
     public String doApply(String singular) {
             return singular.substring(0, singular.length() - 2)
-                    + Exceptions.vowelsNonAccented.get(singular.charAt(singular.length() - 2)) + "ses";
+                    + Exceptions.mapNonAccented.get(singular.charAt(singular.length() - 2)) + "ses";
     }
 
 }

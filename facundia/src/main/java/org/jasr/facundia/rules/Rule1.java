@@ -1,7 +1,5 @@
 package org.jasr.facundia.rules;
 
-import java.util.regex.Pattern;
-
 public class Rule1 extends BaseRule {
 
     public Rule1() {
@@ -13,7 +11,6 @@ public class Rule1 extends BaseRule {
                 return singular;
             if (singular.endsWith("club"))
                 return singular + "es";
-
             return singular + "s";
     }
 

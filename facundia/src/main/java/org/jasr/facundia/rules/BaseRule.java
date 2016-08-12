@@ -19,7 +19,7 @@ public abstract class BaseRule implements Rule {
     
     public String apply(String singular) {
         if (doesApply(singular)) {
-            if (Exceptions.tatums.contains(singular))
+            if (Exceptions.exceptions.contains(singular))
                 return singular;
             if (Exceptions.contains(singular))
                 return Exceptions.get(singular);
