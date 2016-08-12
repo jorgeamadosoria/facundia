@@ -9,7 +9,7 @@ public class EndingStVowSX extends BaseRule {
 
     public String doApply(String singular) {
             return singular.substring(0, singular.length() - 2)
-                    + exceptions.mapNonAccented.get(singular.charAt(singular.length() - 2)) + "ses";
+                    + exceptions.mapNonStressed.get(singular.charAt(singular.length() - 2)) + "ses";
     }
 
 }
