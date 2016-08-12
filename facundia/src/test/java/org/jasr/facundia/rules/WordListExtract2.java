@@ -78,10 +78,6 @@ public class WordListExtract2 {
             applyRule(excRule8, rule8, singulars.get(i), plurals.get(i));
             applyRule(excRule9, rule9, singulars.get(i), plurals.get(i));
 
-            // if (!flag) {
-            // writer.write(singulars.get(i) + " " + plurals.get(i) + "\n");
-            // }
-            // writer.flush();
             excRule1.flush();
             excRule2.flush();
             excRule3.flush();
@@ -106,7 +102,7 @@ public class WordListExtract2 {
     }
 
     public static boolean applyRule(FileWriter exceptions, Rule rule, String singular, String plural) throws Exception {
-        if (rule.doesApply(singular)) {
+        if (rule.apply(singular) != null) {
             String curPlural = rule.apply(singular);
 
             if (!plural.equals(curPlural)) {
