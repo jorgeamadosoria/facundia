@@ -1,3 +1,11 @@
+ómicron omicrones
+y yes
+ácido ácidos
+ácrata ácratas
+atíncar atíncares
+accésit accésits
+ágape ágapes
+áfter áfters
 ábaco ábacos
 ábrego ábregos
 ábrigo ábrigos
@@ -6,13 +14,6 @@
 ácaro ácaros
 ácere áceres
 ácida ácidas
-ácido ácidos
-ácrata ácratas
-atíncar atíncares
-áfter áfters
-accésit accésits
-ágape ágapes
-y yes
 ágata ágatas
 ágora ágoras
 ágrafa ágrafas
@@ -170,11 +171,12 @@ y yes
 óctuplo óctuplos
 óculo óculos
 óleo óleos
-ómicron omicrones
 ón ones
 ónice ónices
 ónique óniques
 ónix ónix
+cerviz cervices
+cérvix cérvix
 ópalo ópalos
 ópera óperas
 óptica ópticas
@@ -1725,7 +1727,7 @@ africanista africanistas
 africano africanos
 africanofobia africanofobias
 afrikáner afrikáneres
-afro afro
+afro afros
 afroamericana afroamericanas
 afroamericano afroamericanos
 afrocaribeña afrocaribeñas
@@ -9336,7 +9338,6 @@ delantero delanteros
 delasolré delasolrés
 delator delatores
 delatora delatoras
-delay delays
 delegación delegaciones
 delegada delegadas
 delegado delegados
@@ -9714,7 +9715,7 @@ deshospedamiento deshospedamientos
 deshuesada deshuesadas
 deshuesado deshuesados
 deshumanización deshumanizaciones
-desiderátum desiderátums / desiderata
+desiderátum desiderátums
 desiderata desideratas
 desiderativa desiderativas
 desiderativo desiderativos
@@ -11983,7 +11984,7 @@ exégeta exégetas
 exómide exómides
 exónima exónimas
 exónimo exónimos
-ex exes
+ex ex
 exacción exacciones
 exacerbación exacerbaciones
 exactitud exactitudes
@@ -12325,6 +12326,11 @@ favorita favoritas
 favoritismo favoritismos
 favorito favoritos
 fax faxes
+unisex unisex
+tórax tórax
+clímax clímax
+dux dux
+fénix fénix
 fayumita fayumitas
 faz faces
 fe fes
@@ -15985,7 +15991,7 @@ lanugo lanugos
 lanza lanzas
 lanzadera lanzaderas
 lanzamiento lanzamientos
-lao lao
+lao laos
 laosiana laosianas
 laosiano laosianos
 lapa lapas
@@ -19126,7 +19132,7 @@ ommetafobia ommetafobias
 omnívora omnívoras
 omnívoro omnívoros
 omnibenevolencia omnibenevolencias
-omnibus omnibus
+ómnibus ómnibus
 omnipotencia omnipotencias
 omnipresencia omnipresencias
 omnisciencia omnisciencias
@@ -21943,7 +21949,7 @@ quimotripsina quimotripsinas
 quimpe quimpes
 quincalla quincallas
 quincallero quincalleros
-quince quince
+quince quinces
 quinceañera quinceañeras
 quinceañero quinceañeros
 quinceavo quinceavos
@@ -23359,8 +23365,6 @@ santería santerías
 santiaguera santiagueras
 santiaguero santiagueros
 santidad santidades
-santim santims
-santims santimi
 santo santos
 santoral santorales
 santuario santuarios
@@ -24853,7 +24857,7 @@ tataranieto tataranietos
 tatuaje tatuajes
 tauón tauones
 taumaturgia taumaturgias
-tauro tauro
+tauro tauros
 taurobolio taurobolios
 taurofobia taurofobias
 tautograma tautogramas
@@ -26389,7 +26393,7 @@ veintiún veintiunos
 veintiuno veintiunos
 veinticuatro veinticuatros
 veintiocho veintiochos
-veintiuna veintiuna
+veintiuna veintiunas
 veisalgia veisalgias
 vejación vejaciones
 vejedad vejedades
@@ -27215,6 +27219,7 @@ zuriquesa zuriquesas
 zuro zuros
 zurrón zurrones
 zurra zurras
+plancton plánctones
 zurrador zurradores
 zurradora zurradoras
 zurrapa zurrapas
