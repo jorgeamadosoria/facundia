@@ -14,5 +14,4 @@ public class OneLetter extends BaseRule {
     public String getDescription() {
         return "Las palabras conformadas por una sola letra siempre forman plural adicionando -es al singular.";
     }
-
 }

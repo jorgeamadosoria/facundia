@@ -15,7 +15,7 @@ public abstract class BaseRule implements Rule {
     }
 
     protected boolean doesApply(String singular) {
-        return singular.length() > 1 && rule.matcher(singular).matches();
+        return rule.matcher(singular).matches();
     }
 
     protected abstract String doApply(String singular);

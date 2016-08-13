@@ -15,7 +15,7 @@ public class WordListExtract3 {
 
         File file = new File("C:/Users/jorge.amado/Desktop/Inflector/sustantivos.txt");
 
-        LineNumberReader reader = new LineNumberReader(new InputStreamReader(new FileInputStream(file),"ISO-8859-1"));
+        LineNumberReader reader = new LineNumberReader(new InputStreamReader(new FileInputStream(file),"UTF-8"));
 
         List<String> singulars = new ArrayList<String>();
         List<String> plurals = new ArrayList<String>();
@@ -31,8 +31,8 @@ public class WordListExtract3 {
         RuleChain rule = new RuleChain();
         for (int i = 0; i < singulars.size(); i++){
             String plural = rule.apply(singulars.get(i)).getPlural();
-       //     if (!plurals.get(i).equals(plural))
-            System.out.println(plural);
+            if (!plurals.get(i).equals(plural))
+            System.out.println(plurals.get(i) + " " + plural);
         }
 
     }

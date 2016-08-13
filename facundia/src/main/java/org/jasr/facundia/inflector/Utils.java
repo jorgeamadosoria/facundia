@@ -8,7 +8,6 @@ import java.util.Set;
 public class Utils {
 
     
-    public final Map<Character, Character> nonAccented       = new HashMap<Character, Character>();
     public final Map<Character, Character> mapStressed       = new HashMap<Character, Character>();
     public final Map<Character, Character> mapNonStressed    = new HashMap<Character, Character>();
     public final Set<Character>            vowelsNonStressed = new HashSet<Character>();
@@ -57,7 +56,7 @@ public class Utils {
 
         String result = "";
         for (Character c : word.toCharArray()) {
-            result = result + (vowelsStressed.contains(c) ? nonAccented.get(c) : c);
+            result = result + (vowelsStressed.contains(c) ? mapNonStressed.get(c) : c);
         }
 
         return result;

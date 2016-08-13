@@ -8,6 +8,11 @@ public class EndingN extends BaseRule {
     }
 
     protected String doApply(String singular) {
+        
+        if (singular.endsWith("plancton")) {
+            return singular.substring(0,singular.lastIndexOf("plancton")) + "plánctones";
+        }
+        
         if (singular.endsWith("men") && utils.vowelsNonStressed.contains(singular.charAt(singular.length() - 4))) {
             return singular.substring(0, singular.length() - 4) + utils.mapStressed.get(singular.charAt(singular.length() - 4))
                     + "menes";
