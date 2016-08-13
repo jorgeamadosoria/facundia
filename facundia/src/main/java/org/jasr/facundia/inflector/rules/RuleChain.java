@@ -14,7 +14,7 @@ public class RuleChain implements Rule {
         rules.add(new OneLetter());
         rules.add(new EndingConsSYX());
         rules.add(new EndingDJLRVowYClubFax());
-        rules.add(new EndingESIS());
+        rules.add(new EndingSTSISX());
         rules.add(new EndingN());
         rules.add(new EndingVowS());
         rules.add(new EndingZ());

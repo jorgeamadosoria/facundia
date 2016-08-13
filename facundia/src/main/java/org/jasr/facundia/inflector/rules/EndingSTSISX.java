@@ -1,8 +1,8 @@
 package org.jasr.facundia.inflector.rules;
 
-public class EndingESIS extends BaseRule {
+public class EndingSTSISX extends BaseRule {
 
-    public EndingESIS() {
+    public EndingSTSISX() {
         super(".*(st|sis|x)");
     }
 
