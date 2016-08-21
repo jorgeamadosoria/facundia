@@ -18,21 +18,21 @@ public class Utils {
 
         
 
-        mapStressed.put('a', 'á');
-        mapStressed.put('e', 'é');
-        mapStressed.put('i', 'í');
-        mapStressed.put('o', 'ó');
-        mapStressed.put('u', 'ú');
-        mapStressed.put('á', 'á');
-        mapStressed.put('é', 'é');
-        mapStressed.put('í', 'í');
-        mapStressed.put('ó', 'ó');
-        mapStressed.put('ú', 'ú');
-        mapNonStressed.put('á', 'a');
-        mapNonStressed.put('é', 'e');
-        mapNonStressed.put('í', 'i');
-        mapNonStressed.put('ó', 'o');
-        mapNonStressed.put('ú', 'u');
+        mapStressed.put('a', 'Ã¡');
+        mapStressed.put('e', 'Ã©');
+        mapStressed.put('i', 'Ã­');
+        mapStressed.put('o', 'Ã³');
+        mapStressed.put('u', 'Ãº');
+        mapStressed.put('Ã¡', 'Ã¡');
+        mapStressed.put('Ã©', 'Ã©');
+        mapStressed.put('Ã­', 'Ã­');
+        mapStressed.put('Ã³', 'Ã³');
+        mapStressed.put('Ãº', 'Ãº');
+        mapNonStressed.put('Ã¡', 'a');
+        mapNonStressed.put('Ã©', 'e');
+        mapNonStressed.put('Ã­', 'i');
+        mapNonStressed.put('Ã³', 'o');
+        mapNonStressed.put('Ãº', 'u');
         mapNonStressed.put('a', 'a');
         mapNonStressed.put('e', 'e');
         mapNonStressed.put('i', 'i');
@@ -43,11 +43,11 @@ public class Utils {
         vowelsNonStressed.add('i');
         vowelsNonStressed.add('o');
         vowelsNonStressed.add('u');
-        vowelsStressed.add('á');
-        vowelsStressed.add('é');
-        vowelsStressed.add('í');
-        vowelsStressed.add('ó');
-        vowelsStressed.add('ú');
+        vowelsStressed.add('Ã¡');
+        vowelsStressed.add('Ã©');
+        vowelsStressed.add('Ã­');
+        vowelsStressed.add('Ã³');
+        vowelsStressed.add('Ãº');
     }
 
     
