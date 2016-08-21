@@ -1,4 +1,6 @@
-package org.jasr.facundia.ordinal;
+package org.jasr.facundia.cardinal;
+
+import java.math.BigInteger;
 
 public class Constants {
 
@@ -23,17 +25,17 @@ public class Constants {
     public static final String _13 = "trece ";
     public static final String _14 = "catorce ";
     public static final String _15 = "quince ";
-    public static final String _16 = "diecis閕s ";
+    public static final String _16 = "diecis茅is ";
     public static final String _17 = "diecisiete ";
     public static final String _18 = "dieciocho ";
     public static final String _19 = "diecinueve ";
     public static final String _20 = "veinte ";
-    public static final String _21 = "veinti鷑 ";
-    public static final String _22 = "veintid髎 ";
-    public static final String _23 = "veintitr閟 ";
+    public static final String _21 = "veinti煤n ";
+    public static final String _22 = "veintid贸s ";
+    public static final String _23 = "veintitr茅s ";
     public static final String _24 = "veinticuatro ";
     public static final String _25 = "veinticinco ";
-    public static final String _26 = "veintis閕s ";
+    public static final String _26 = "veintis茅is ";
     public static final String _27 = "veintisiete ";
     public static final String _28 = "veintiocho ";
     public static final String _29 = "veintinueve ";
@@ -55,15 +57,18 @@ public class Constants {
     public static final String _800 = "ochocientos ";
     public static final String _900 = "novecientos ";
     public static final String _1000 = "mil ";
-    public static final String _10E6n = "mill髇 ";
+    public static final String _10E6n = "mill贸n ";
     public static final String _10E6 = "millones ";
-    public static final String _10E12n = "bill髇 ";
+    public static final String _10E12n = "bill贸n ";
     public static final String _10E12 = "billones ";
-    public static final String _10E18n = "trill髇 ";
+    public static final String _10E18n = "trill贸n ";
     public static final String _10E18 = "trillones ";
-    public static final String _10E24n = "cuatrill髇 ";
+    public static final String _10E24n = "cuatrill贸n ";
     public static final String _10E24 = "cuatrillones ";
     
     public static final String[] Periods = {"",_10E6,_10E12,_10E18,_10E24};
     public static final String[] singularPeriods = {"",_10E6n,_10E12n,_10E18n,_10E24n};
+    
+    public static final BigInteger minimum = new BigInteger("0");
+    public static final BigInteger maximum = new BigInteger("999999999999999999999999999999");
 }

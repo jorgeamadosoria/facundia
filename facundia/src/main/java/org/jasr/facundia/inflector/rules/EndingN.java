@@ -10,7 +10,7 @@ public class EndingN extends BaseRule {
     protected String doApply(String singular) {
         
         if (singular.endsWith("plancton")) {
-            return singular.substring(0,singular.lastIndexOf("plancton")) + "plánctones";
+            return singular.substring(0,singular.lastIndexOf("plancton")) + "plÃ¡nctones";
         }
         
         if (singular.endsWith("men") && utils.vowelsNonStressed.contains(singular.charAt(singular.length() - 4))) {
@@ -31,7 +31,7 @@ public class EndingN extends BaseRule {
 
     @Override
     public String getDescription() {
-        return "Las palabras terminadas en 'n' forman plural adicionando -es al final. Las palabras agudas acentuadas pasan a ser llanas (sin acentuación). Las palabras llanas sin acentuación pasan a ser esdrújulas acentuadas, especialmente las terminadas en -men como germen o examen.";
+        return "Las palabras terminadas en 'n' forman plural adicionando -es al final. Las palabras agudas acentuadas pasan a ser llanas (sin acentuaciÃ³n). Las palabras llanas sin acentuaciÃ³n pasan a ser esdrÃºjulas acentuadas, especialmente las terminadas en -men como germen o examen.";
     }
 
     

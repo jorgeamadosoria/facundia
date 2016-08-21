@@ -3,7 +3,7 @@ package org.jasr.facundia.inflector.rules;
 public class EndingVowS extends BaseRule {
 
     public EndingVowS() {
-        super(".*(a|e|i|o|u|á|é|í|ó|ú)s");
+        super(".*(a|e|i|o|u|Ã¡|Ã©|Ã­|Ã³|Ãº)s");
 
     }
 
@@ -16,7 +16,7 @@ public class EndingVowS extends BaseRule {
 
     @Override
     public String getDescription() {
-        return "Las palabras terminadas en vocal seguida de 's' forman plural adicionando -es al final. Si la vocal que antecede a la 's' en la forma singular está acentuada, pierde este acento en el plural.";
+        return "Las palabras terminadas en vocal seguida de 's' forman plural adicionando -es al final. Si la vocal que antecede a la 's' en la forma singular estÃ¡ acentuada, pierde este acento en el plural.";
     }
 
 }

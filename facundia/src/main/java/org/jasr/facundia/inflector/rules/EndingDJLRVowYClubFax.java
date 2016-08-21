@@ -13,7 +13,7 @@ public class EndingDJLRVowYClubFax extends BaseRule {
 
     @Override
     public String getDescription() {
-        return "Las palabras terminadas en 'd','j','l','r', o una combinación de vocal seguida de 'y' forman plural adicionando -es al final. La misma regla aplica si la palabra es alguna palabra derivada y/o terminada en 'club' o 'fax' como aeroclub,autoclub,fax o telefax.";
+        return "Las palabras terminadas en 'd','j','l','r', o una combinaciÃ³n de vocal seguida de 'y' forman plural adicionando -es al final. La misma regla aplica si la palabra es alguna palabra derivada y/o terminada en 'club' o 'fax' como aeroclub,autoclub,fax o telefax.";
     }
 
 }

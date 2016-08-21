@@ -1,38 +1,55 @@
 package org.jasr.facundia.syllabes;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.apache.commons.lang3.StringUtils;
 import org.jasr.dfa.DFA;
 import org.jasr.dfa.State;
 import org.jasr.dfa.memento.StringsMemento;
 import org.jasr.dfa.transitions.ResetTransition;
 import org.jasr.dfa.transitions.Transition;
 import org.jasr.dfa.transitions.UpdateTransition;
+import org.mockito.cglib.core.CollectionUtils;
 
-public class TestSyllabes {
+public class Syllaber {
 
-    public static void main(String[] args) {
+    private Set<Character>                       alphabet = new HashSet<>();
+    private Set<State<String>>                   states   = new HashSet<State<String>>();
+    private DFA<Character, List<String>, String> dfa;
 
-        Set<Character> alphabet = new HashSet<>();
+    private void init() {
 
-        Character[] vocalesFuertes = { 'a', '�', 'o', '�', 'e', '�', '�', '�' };
+        Character[] vocalesFuertes = { 'a', 'á', 'e', 'é', 'í', 'o', 'ó', 'ú' };
         Character[] consCombLR = { 'b', 'p', 'c', 'f', 'g' };
         Character[] consCombR = { 'd', 'k', 't' };
         Character[] haches = { 'h' };
-        Character[] vocalesDebiles = { 'i', '�', 'u' };
+        Character[] vocalesDebiles = { 'i', 'ü', 'u' };
         Character[] eles = { 'l' };
-        Character[] consGen = { 'm', 'n', '�', 'j', 'q', 's', 'v', 'w', 'x', 'y', 'z' };
+        Character[] consGen = { 'm', 'n', 'ñ', 'j', 'q', 's', 'v', 'w', 'x', 'y', 'z' };
         Character[] erres = { 'r' };
+
+        alphabet.addAll(Arrays.asList(vocalesFuertes));
+        alphabet.addAll(Arrays.asList(consCombLR));
+        alphabet.addAll(Arrays.asList(consCombR));
+        alphabet.addAll(Arrays.asList(haches));
+        alphabet.addAll(Arrays.asList(vocalesDebiles));
+        alphabet.addAll(Arrays.asList(eles));
+        alphabet.addAll(Arrays.asList(consGen));
+        alphabet.addAll(Arrays.asList(erres));
+
         State<String> qi = new State<>("qi", "start state", true, true);
-        State<String> q0 = new State<>("q0", "consonantes de la silaba antes de las vocales", false, true);
+        State<String> q0 = new State<>("q0", "consonantes de la sílaba antes de las vocales", false, true);
         State<String> q1 = new State<>("q1", "encontrada vocal fuerte", false, true);
-        State<String> q2 = new State<>("q2", "encontrada vocal debil", false, true);
-        State<String> q3 = new State<>("q3", "consonantes generales de la silaba despues de las vocales", false, true);
-        State<String> q4 = new State<>("q4", "encontrada l despues de las vocales", false, true);
-        State<String> q5 = new State<>("q5", "encontrada r despues de las vocales", false, true);
-        Set<State<String>> states = new HashSet<State<String>>();
+        State<String> q2 = new State<>("q2", "encontrada vocal débil", false, true);
+        State<String> q3 = new State<>("q3", "consonantes generales de la sílaba después de las vocales", false, true);
+        State<String> q4 = new State<>("q4", "encontrada l después de las vocales", false, true);
+        State<String> q5 = new State<>("q5", "encontrada r después de las vocales", false, true);
+
         states.add(qi);
         states.add(q0);
         states.add(q1);
@@ -40,10 +57,10 @@ public class TestSyllabes {
         states.add(q3);
         states.add(q4);
         states.add(q5);
-        DFA<Character, List<String>,String> dfa = new DFA<>(new StringsMemento(), alphabet, states);
 
         Transition update = new UpdateTransition();
         Transition reset = new ResetTransition();
+        this.dfa = new DFA<>(new StringsMemento(), alphabet, states);
         // qi
         dfa.add(qi, q1, vocalesFuertes, update).add(qi, q0, consCombLR, update).add(qi, q0, consCombR, update)
                 .add(qi, q0, haches, update).add(qi, q2, vocalesDebiles, update).add(qi, q0, eles, update)
@@ -78,19 +95,32 @@ public class TestSyllabes {
                 .add(q5, q0, haches, reset).add(q5, q2, vocalesDebiles, reset).add(q5, q0, eles, reset)
                 .add(q5, q0, consGen, reset).add(q5, q3, erres, update);
 
-        StringBuilder sb = new StringBuilder("almohada");
+    }
+
+    public Syllaber() {
+        init();
+    }
+
+    public List<String> divide(String word) {
+
+        if (!StringUtils.isAlpha(word))
+            return Collections.emptyList();
+        
+        StringBuilder sb = new StringBuilder(word);
         sb.reverse();
 
         for (Character c : sb.toString().toCharArray())
             dfa.transition(c);
         List<String> syllabes = dfa.getMemento();
         Collections.reverse(syllabes);
-        String res = "";
-        for (String syllabe : syllabes) {
-            res += new StringBuilder(syllabe).reverse() + "-";
-        }
-        res = res.substring(0, res.length() - 1);
-        System.out.print(res);
+        List<String> result = new ArrayList<>();
+        for (String syllabe : syllabes) 
+            result.add(new StringBuilder(syllabe).reverse().toString());
+        dfa.reset();
+        return result;
     }
-
+    
+    public void reset(){
+        dfa.reset();
+    }
 }

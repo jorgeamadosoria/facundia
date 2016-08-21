@@ -3,6 +3,7 @@ package org.jasr.facundia.inflector.rules;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.jasr.facundia.inflector.InflectionResult;
 
 public class RuleChain implements Rule {
@@ -21,8 +22,15 @@ public class RuleChain implements Rule {
         rules.add(new EndingGeneral());
     }
 
+    private boolean validate(String singular) {
+        return !StringUtils.isEmpty(singular) && StringUtils.isAlpha(singular);
+    }
+
     @Override
     public InflectionResult apply(String singular) {
+        if (!validate(singular))
+            return null;
+
         int i = 0;
         InflectionResult result = null;
         do {

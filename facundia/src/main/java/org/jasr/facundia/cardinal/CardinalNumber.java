@@ -1,9 +1,11 @@
-package org.jasr.facundia.ordinal;
+package org.jasr.facundia.cardinal;
 
 import java.math.BigInteger;
 import java.util.Arrays;
 
-public class OrdinalNumber {
+import org.apache.commons.lang3.StringUtils;
+
+public class CardinalNumber {
 
     public String getText(BigInteger number) {
         return process(number.toString());
@@ -20,13 +22,12 @@ public class OrdinalNumber {
     public String getText(String number) {
         return process(number);
     }
-    
-    
+
     private String process(String number) {
 
         char[] preDigits = number.toCharArray();
 
-        if (!validate(preDigits))
+        if (!validate(number))
             return "NaN";
 
         // remove leftmost zeros
@@ -44,24 +45,24 @@ public class OrdinalNumber {
         int len = digits.length / 6;
         int periodCounter = 0;
         for (int j = 0; j < len; j++) {
-            processPeriod(result,digits,periodCounter,j);
+            processPeriod(result, digits, periodCounter, j);
         }
 
         if (digits.length % 6 > 0) {
-            processPeriod(result,digits,periodCounter,len);
+            processPeriod(result, digits, periodCounter, len);
         }
 
         return postProcessing(result);
     }
-    
-    private void processPeriod(StringBuilder result,char[] digits,int periodCounter,int j){
+
+    private void processPeriod(StringBuilder result, char[] digits, int periodCounter, int j) {
         StringBuilder period = new StringBuilder();
         period.append(periods(digits, digits.length - (j * 6) - 6, digits.length - (j * 6)));
         period.append(getPeriodMarker(period, periodCounter++));
         result.insert(0, period);
     }
-    
-    private String postProcessing(StringBuilder result){
+
+    private String postProcessing(StringBuilder result) {
         String strRes = result.toString();
         if (strRes.endsWith(Constants._21))
             return strRes.substring(0, strRes.lastIndexOf(Constants._21)) + Constants._21o;
@@ -69,7 +70,6 @@ public class OrdinalNumber {
             return strRes.substring(0, strRes.lastIndexOf(Constants._1)) + Constants._1o;
         return result.toString().trim();
     }
-    
 
     private String getPeriodMarker(StringBuilder period, int periodMarker) {
         if (period.toString().equals(Constants._1))
@@ -77,15 +77,21 @@ public class OrdinalNumber {
         return Constants.Periods[periodMarker];
     }
 
-    private boolean validate(char[] digits) {
-        if (digits == null || digits.length == 0)
+    private boolean validate(String digits) {
+        //invalid if string is null or ""
+        if (StringUtils.isEmpty(digits))
             return false;
+        
         // valid if all digits are... digits
-        for (char c : digits) {
+        for (char c : digits.toCharArray()) {
             if (!Character.isDigit(c))
                 return false;
         }
-
+        
+        //valid if within range
+        BigInteger current = new BigInteger(new String(digits));
+        if (current.compareTo(Constants.minimum) < 0 && current.compareTo(Constants.maximum) > 0)
+            return false;
         return true;
     }
 

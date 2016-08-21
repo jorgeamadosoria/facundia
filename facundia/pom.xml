@@ -16,6 +16,7 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<mockito.version>1.10.19</mockito.version>
 		<junit.version>4.11</junit.version>
+		<dfa.version>1.0.1</dfa.version>
 		<jdk.version>1.7</jdk.version>
 	</properties>
 	<licenses>
@@ -97,7 +98,7 @@
 		<dependency>
 			<groupId>com.github.jorgeamadosoria</groupId>
 			<artifactId>dfa</artifactId>
-			<version>1.0</version>
+			<version>${dfa.version}</version>
 		</dependency>
 
 	</dependencies>

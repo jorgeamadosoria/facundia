@@ -20,7 +20,8 @@ public abstract class BaseRule implements Rule {
 
     protected abstract String doApply(String singular);
 
-    public InflectionResult apply(String singular) {
+    public InflectionResult apply(String word) {
+        String singular = word.toLowerCase();
         if (doesApply(singular)) {
             return new InflectionResult(singular, doApply(singular), this);
         }
