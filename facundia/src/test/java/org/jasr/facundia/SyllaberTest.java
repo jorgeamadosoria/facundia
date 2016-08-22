@@ -14,10 +14,9 @@ public class SyllaberTest {
     
     @Test
     public void happyPathTest(){
-        System.out.println(facundia.syllabicate("dijkstra"));
         
         Assert.assertArrayEquals(new String[] {"sin","gu","la","res"},facundia.syllabicate("singulares").toArray(new String[0]));
-        Assert.assertArrayEquals(new String[] {"dijks","tra"},facundia.syllabicate("dijkstra").toArray(new String[0]));
+        Assert.assertArrayEquals(new String[] {"pseu","do","cien","cia"},facundia.syllabicate("pseudociencia").toArray(new String[0]));
     }
     
     @Test

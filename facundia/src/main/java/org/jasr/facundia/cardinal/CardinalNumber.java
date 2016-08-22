@@ -45,7 +45,7 @@ public class CardinalNumber {
         int len = digits.length / 6;
         int periodCounter = 0;
         for (int j = 0; j < len; j++) {
-            processPeriod(result, digits, periodCounter, j);
+            processPeriod(result, digits, periodCounter++, j);
         }
 
         if (digits.length % 6 > 0) {
@@ -57,8 +57,8 @@ public class CardinalNumber {
 
     private void processPeriod(StringBuilder result, char[] digits, int periodCounter, int j) {
         StringBuilder period = new StringBuilder();
-        period.append(periods(digits, digits.length - (j * 6) - 6, digits.length - (j * 6)));
-        period.append(getPeriodMarker(period, periodCounter++));
+        period.append(periods(digits, Math.max(0,digits.length - (j * 6) - 6), digits.length - (j * 6)));
+        period.append(getPeriodMarker(period, periodCounter));
         result.insert(0, period);
     }
 

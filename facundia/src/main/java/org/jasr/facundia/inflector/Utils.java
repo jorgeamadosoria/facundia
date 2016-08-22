@@ -12,6 +12,7 @@ public class Utils {
     public final Map<Character, Character> mapNonStressed    = new HashMap<Character, Character>();
     public final Set<Character>            vowelsNonStressed = new HashSet<Character>();
     public final Set<Character>            vowelsStressed    = new HashSet<Character>();
+    public final Set<Character>            vowels    = new HashSet<Character>();
     public final static Utils          INSTANCE          = new Utils();
 
     private Utils() {
@@ -48,6 +49,17 @@ public class Utils {
         vowelsStressed.add('í');
         vowelsStressed.add('ó');
         vowelsStressed.add('ú');
+        
+        vowels.add('a');
+        vowels.add('e');
+        vowels.add('i');
+        vowels.add('o');
+        vowels.add('u');
+        vowels.add('á');
+        vowels.add('é');
+        vowels.add('í');
+        vowels.add('ó');
+        vowels.add('ú');
     }
 
     

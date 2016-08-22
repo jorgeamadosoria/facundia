@@ -14,6 +14,7 @@ import org.jasr.dfa.memento.StringsMemento;
 import org.jasr.dfa.transitions.ResetTransition;
 import org.jasr.dfa.transitions.Transition;
 import org.jasr.dfa.transitions.UpdateTransition;
+import org.jasr.facundia.inflector.Utils;
 import org.mockito.cglib.core.CollectionUtils;
 
 public class Syllaber {
@@ -114,8 +115,15 @@ public class Syllaber {
         List<String> syllabes = dfa.getMemento();
         Collections.reverse(syllabes);
         List<String> result = new ArrayList<>();
-        for (String syllabe : syllabes) 
-            result.add(new StringBuilder(syllabe).reverse().toString());
+        String resultingSyllabe = "";
+        for (String syllabe : syllabes){
+            resultingSyllabe = syllabe + resultingSyllabe;
+            if (StringUtils.containsAny(resultingSyllabe, "aeioüuáéíóú")){
+                  result.add(new StringBuilder(resultingSyllabe).reverse().toString());
+                  resultingSyllabe = "";
+            }
+        }
+        
         dfa.reset();
         return result;
     }
