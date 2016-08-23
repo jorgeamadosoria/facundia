@@ -37,7 +37,7 @@ public class CardinalNumber {
 
         // nothing but zeros
         if (i == preDigits.length)
-            return Constants._0;
+            return Constants._0.trim();
 
         char[] digits = Arrays.copyOfRange(preDigits, i, preDigits.length);
 
@@ -58,6 +58,7 @@ public class CardinalNumber {
     private void processPeriod(StringBuilder result, char[] digits, int periodCounter, int j) {
         StringBuilder period = new StringBuilder();
         period.append(periods(digits, Math.max(0,digits.length - (j * 6) - 6), digits.length - (j * 6)));
+        if (period.length() > 0)
         period.append(getPeriodMarker(period, periodCounter));
         result.insert(0, period);
     }
@@ -280,9 +281,6 @@ public class CardinalNumber {
 
     private void units(StringBuilder result, char unit) {
         switch (unit) {
-        case '0':
-            result.append(Constants._0);
-            break;
         case '1':
             result.append(Constants._1);
             break;
