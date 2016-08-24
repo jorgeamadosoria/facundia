@@ -14,8 +14,6 @@ import org.jasr.dfa.memento.StringsMemento;
 import org.jasr.dfa.transitions.ResetTransition;
 import org.jasr.dfa.transitions.Transition;
 import org.jasr.dfa.transitions.UpdateTransition;
-import org.jasr.facundia.inflector.Utils;
-import org.mockito.cglib.core.CollectionUtils;
 
 public class Syllaber {
 
