@@ -20,9 +20,13 @@ public class CardinalTest {
     public void InvalidValuesTest() {
         assertEquals("NaN", facundia.cardinal("0a00000"));
         assertEquals("NaN", facundia.cardinal("0.00000"));
-        assertEquals("NaN", facundia.cardinal("-10"));
-        assertEquals("NaN", facundia.cardinal(-10));
         assertEquals("NaN", facundia.cardinal("word"));
+    }
+    
+    @Test
+    public void negativeTest() {
+        assertEquals("menos diez", facundia.cardinal("-10"));
+        assertEquals("menos diez", facundia.cardinal(-10));
     }
 
     @Test

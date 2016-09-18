@@ -24,12 +24,19 @@ public class CardinalNumber {
     }
 
     private String process(String number) {
-
+        
         char[] preDigits = number.toCharArray();
 
+        boolean negative = false; 
+        if (negative = preDigits[0] == '-'){
+            preDigits = Arrays.copyOfRange(preDigits, 1,preDigits.length);
+            number = number.substring(1);
+        }
+        
         if (!validate(number))
             return "NaN";
-
+        
+        
         // remove leftmost zeros
         int i = 0;
         while (i < preDigits.length && preDigits[i] == '0')
@@ -52,7 +59,7 @@ public class CardinalNumber {
             processPeriod(result, digits, periodCounter, len);
         }
 
-        return postProcessing(result);
+        return postProcessing(negative,result);
     }
 
     private void processPeriod(StringBuilder result, char[] digits, int periodCounter, int j) {
@@ -63,13 +70,13 @@ public class CardinalNumber {
         result.insert(0, period);
     }
 
-    private String postProcessing(StringBuilder result) {
+    private String postProcessing(boolean negative,StringBuilder result) {
         String strRes = result.toString();
         if (strRes.endsWith(Constants._21))
             return strRes.substring(0, strRes.lastIndexOf(Constants._21)) + Constants._21o;
         if (strRes.endsWith(Constants._1))
             return strRes.substring(0, strRes.lastIndexOf(Constants._1)) + Constants._1o;
-        return result.toString().trim();
+        return (negative?Constants.negative:"") + result.toString().trim();
     }
 
     private String getPeriodMarker(StringBuilder period, int periodMarker) {
