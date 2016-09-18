@@ -11,7 +11,7 @@ public class Exceptions extends BaseRule {
 
     public Exceptions() {
         super(".*");
-        try (InputStream stream = new FileInputStream("src/main/resources/exceptions.properties")) {
+        try (InputStream stream = new FileInputStream("src/main/resources/singularExceptions.properties")) {
             exceptions.load(stream);
         }
         catch (IOException e) {

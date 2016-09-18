@@ -1,40 +1,37 @@
 package org.jasr.facundia.verbs;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import org.apache.commons.io.FileUtils;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.Map;
+import java.util.Properties;
 
 public class Main {
 
-	public static void main(String[] args) throws Exception{
-		// TODO Auto-generated method stub
+    public static void main(String[] args) {
 
-		List<String> verbs = FileUtils.readLines(new File("C:/Users/jasr/Downloads/verbosConjugacionesRae.csv"));
-		List<String> verbsFaulty = new ArrayList<>();
-		List<String> verbsOk = new ArrayList<>();
-		int i = 0;
-		for(String verb:verbs){
-	//		System.out.println(verb);
-			String[] forms = verb.split(",");
-			String stem = forms[2];
-			if (forms.length < 129){
-				verbsFaulty.add(verb);
-			}
-			else
-				verbsOk.add(verb);
-		/*	for(String form:forms){
-				if (form.startsWith(stem)) i++;
-			}
-			*/
-		}
-		
-		FileUtils.writeLines(new File("C:/Users/jasr/Downloads/verbosConjugacionesRaeFaulty.csv"),verbsFaulty);
-		FileUtils.writeLines(new File("C:/Users/jasr/Downloads/verbosConjugacionesRaeOk.csv"),verbsOk);
-		
-		
-		System.out.println(i);
-	}
+        Properties verbModels = new Properties();
+        try (InputStream stream = new FileInputStream("src/main/resources/verbModels.properties")) {
+            verbModels.load(new InputStreamReader(stream, "UTF-8"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        Properties verbList = new Properties();
+        try (InputStream stream = new FileInputStream("src/main/resources/verbList.properties")) {
+            verbList.load(new InputStreamReader(stream, "UTF-8"));
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        for(Map.Entry v:verbList.entrySet()){
+            String[] value = v.getValue().toString().split(",");
+       //     Verb verb = new Verb(v.getKey().toString(),value[0],v.getKey().toString().substring(new Integer(value[1])));
+      //      System.out.println(verb);
+        }
+    }
 
 }
