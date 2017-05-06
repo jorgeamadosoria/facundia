@@ -9,9 +9,9 @@ import java.util.stream.Collectors;
 import org.apache.commons.lang3.math.NumberUtils;
 
 public class Rule implements Conjugation {
-    List<Pattern> matchPatterns;
-    Pattern       replacePattern;
-    String[]      groups;
+    protected List<Pattern> matchPatterns;
+    protected Pattern       replacePattern;
+    protected String[]      groups;
 
     public Rule(String replacePattern, String... groups) {
         this.replacePattern = Pattern.compile(replacePattern);

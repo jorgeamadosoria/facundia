@@ -20,7 +20,7 @@ public class Syllaber {
     private Set<Character>                       alphabet = new HashSet<>();
     private Set<State<String>>                   states   = new HashSet<State<String>>();
     private DFA<Character, List<String>, String> dfa;
-
+    
     private void init() {
 
         Character[] vocalesFuertes = { 'a', 'á', 'e', 'é', 'í', 'o', 'ó', 'ú' };
@@ -129,4 +129,5 @@ public class Syllaber {
     public void reset(){
         dfa.reset();
     }
+    
 }

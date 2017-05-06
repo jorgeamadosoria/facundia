@@ -5,6 +5,8 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import org.jasr.facundia.syllabes.Syllaber;
+
 public class Utils {
 
     
@@ -62,7 +64,10 @@ public class Utils {
         vowels.add('ú');
     }
 
-    
+    public boolean monosyllabic(String form) {
+        Syllaber syllaber = new Syllaber();
+        return syllaber.divide(form).size() == 1;
+    }
 
     public String unaccented(String word) {
 
@@ -84,4 +89,8 @@ public class Utils {
         return false;
     }
 
+    
+    public String removeAccentIfMonoSyllabic(String form) {
+        return INSTANCE.monosyllabic(form) ? INSTANCE.unaccented(form) : form;
+    }
 }
