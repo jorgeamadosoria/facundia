@@ -13,7 +13,7 @@ public class Rule implements Conjugation {
     protected Pattern       replacePattern;
     protected String[]      groups;
 
-    public Rule(String replacePattern, String... groups) {
+    public Rule(String replacePattern, String[] groups) {
         this.replacePattern = Pattern.compile(replacePattern);
         this.matchPatterns = Arrays.asList(this.replacePattern);
         this.groups = groups;

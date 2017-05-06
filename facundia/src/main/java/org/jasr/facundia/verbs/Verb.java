@@ -1,10 +1,6 @@
 package org.jasr.facundia.verbs;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 public enum Verb {
-    INF,GER, PRES_IMP_USTED, CO_SUB_EL, CO_SUB_YO, FUT_SUB_NOSOTROS, PRES_IMP_VOS, PRES_SUB_YO
+    INF,GER, PRES_IMP_USTED, CO_SUB_EL, CO_SUB_YO, FUT_SUB_NOSOTROS, PRES_IMP_VOS, PRES_SUB_YO, PART, CO_SUB_VOS, CO_SUB_ELLOS, PRES_IMP_TU, CO_SUB_NOSOTROS, PRES_IND_TU, PRES_IMP_VOSEO, CO_SUB_TU
     
 }
