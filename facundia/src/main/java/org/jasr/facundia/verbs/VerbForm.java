@@ -5,38 +5,31 @@ import java.util.Arrays;
 import org.jasr.facundia.verbs.conjugation.Conjugation;
 
 public class VerbForm {
-    private Verb          name;
-    private Conjugation[] conjugations;
-    private VerbForm      root;
+	private Conjugation[] conjugations;
+	private VerbForm root;
 
-    public VerbForm(Verb name, Conjugation... conjugations) {
-        this.root = null;
-        this.name = name;
-        this.conjugations = conjugations;
-    }
+	public VerbForm(Conjugation... conjugations) {
+		this(null,conjugations);
+	}
 
-    public VerbForm(Verb name, VerbForm root, Conjugation... conjugations) {
-        this.root = root;
-        this.name = name;
-        this.conjugations = conjugations;
-    }
+	public VerbForm(VerbForm root, Conjugation... conjugations) {
+		this.root = null;
+		this.conjugations = conjugations;
+	}
+	
+	
+	public String conjugate(String form) {
+		if (root != null)
+			form = root.conjugate(form);
 
-    public Verb getName() {
-        return name;
-    }
+		if (conjugations != null)
+			return doConjugate(form);
+		return form;
+	}
 
-    public String conjugate(String form) {
-        if (root != null)
-            form = root.conjugate(form);
+	private String doConjugate(String form) {
 
-        if (conjugations != null)
-            return doConjugate(form);
-        return form;
-    }
-
-    private String doConjugate(String form) {
-
-        return Arrays.stream(conjugations).sequential().filter(conjugation -> conjugation.matches(form)).findFirst().get()
-                .conjugate(form);
-    }
+		return Arrays.stream(conjugations).sequential().filter(conjugation -> conjugation.matches(form)).findFirst()
+				.get().conjugate(form);
+	}
 }

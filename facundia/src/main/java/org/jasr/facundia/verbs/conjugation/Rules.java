@@ -1,14 +1,6 @@
 package org.jasr.facundia.verbs.conjugation;
 
-import java.util.Arrays;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-
 public class Rules {
-
-    public static Exception e(String form, String replace) {
-        return new Exception(form, replace);
-    }
 
     public static Rule r(String replacePattern, String... groups) {
         return new Rule(replacePattern, groups);
