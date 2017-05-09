@@ -244,9 +244,9 @@ public class Conjugator {
 		forms.put(Verb.PRES_SUB_TU, new VerbForm(forms.get(Verb.PRES_SUB_YO), "dar->", "(.*)->1"));
 
 		forms.put(Verb.PRES_SUB_NOSOTROS,
-				new VerbForm("ser->seamos", "haber->", "caber->quepamos", "desvaír", "desvayamos", "ir", "vayamos",
-						"mecer", "mezamos", "remecer", "remezamos", "antever", "anteveamos", "entrever", "entreveamos",
-						"prever", "preveamos", "trasver", "trasveamos", "ver", "veamos", "(.*)gar->1,guemos",
+				new VerbForm("ser->seamos", "haber->", "caber->quepamos", "desvaír->desvayamos", "ir->vayamos",
+						"mecer->mezamos", "remecer->remezamos", "antever->anteveamos", "entrever->entreveamos",
+						"prever->preveamos", "trasver->trasveamos", "ver->veamos", "(.*)gar->1,guemos",
 						"(.*)zar->1,cemos", "(.*)car->1,quemos", "(.*)guar->1,güemos", "(.*)ar->1,emos",
 						"(.*)(ten|pon|val)er->1,2,gamos", "(.*)(c|tr)aer->1,2,aigamos", "(.*)saber->1,sepamos",
 						"(.*)ger->1,jamos", "(.*)cocer->1,cozamos", "(.*)cer->1,zcamos", "(.*)er->1,amos",
@@ -316,8 +316,7 @@ public class Conjugator {
 	}
 
 	public Map<Verb, String> conjugate(String infinitive) {
-		return forms.keySet().stream()// .forEach(form ->
-										// form.getValue().conjugate(infinitive))
+		return forms.keySet().stream()
 				.collect(Collectors.toMap(key -> key, key -> forms.get(key).conjugate(infinitive)));
 	}
 }
