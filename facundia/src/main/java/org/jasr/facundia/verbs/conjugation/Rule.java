@@ -13,7 +13,7 @@ import org.jasr.facundia.verbs.VerbForm;
 public class Rule implements Conjugation {
 
 	protected VerbForm root;
-	protected List<Pattern> matchPatterns;
+	protected List<Rule> matchPatterns;
 	protected Pattern replacePattern;
 	protected String[] groups;
 	protected boolean monosyl;
@@ -24,20 +24,17 @@ public class Rule implements Conjugation {
 		return ptn;
 	}
 
-	public Rule(VerbForm root, String replacePattern, String[] patterns, String[] groups, boolean monosyl) {
+	public Rule(VerbForm root, String replacePattern, Rule[] patterns, String[] groups, boolean monosyl) {
 		this.root = root;
 		this.replacePattern = Pattern.compile(patternize(replacePattern));
-		if (patterns == null)
-			this.matchPatterns = new ArrayList<>();
-		this.matchPatterns = Arrays.stream(patterns).map(pattern -> Pattern.compile(patternize(pattern)))
-				.collect(Collectors.toList());
-		this.matchPatterns.add(this.replacePattern);
+		this.matchPatterns = Arrays.stream(patterns).collect(Collectors.toList());
+		this.matchPatterns.add(Rules.r(replacePattern));
 		this.groups = groups;
 	}
 
 	@Override
 	public boolean matches(String form) {
-		return matchPatterns.stream().allMatch(pattern -> pattern.matcher(form).matches());
+		return matchPatterns.stream().allMatch(pattern -> pattern.matches(form));
 	}
 
 	@Override

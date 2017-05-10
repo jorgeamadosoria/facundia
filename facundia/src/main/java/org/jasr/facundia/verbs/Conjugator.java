@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import org.jasr.facundia.syllabes.Syllaber;
+import org.jasr.facundia.verbs.conjugation.Rule;
 import org.jasr.facundia.verbs.conjugation.Rules;
 
 public class Conjugator {
@@ -112,17 +112,14 @@ public class Conjugator {
 		forms.put(Verb.COP_IND_TU, new VerbForm(forms.get(Verb.COP_IND_YO), "(.*)->1,s"));
 
 		forms.put(Verb.COP_IND_EL, forms.get(Verb.COP_IND_YO));
-		/*
-		 * new
-		 * VerbForm(Verb.COP_IND_NOSOTROS"] = new VerbForm( Verb.COP_IND_YO"], {
-		 * "ser","", "ir","" }, [ "(.*)aba->1,ábamos", "(.*)->1,mos"]} ] );
-		 * 
-		 * new VerbForm(Verb.COP_IND_VOS"] = new VerbForm( Verb.COP_IND_YO"], ,
-		 * "(.*)->1,is"]} ] );
-		 * 
-		 * new VerbForm(Verb.COP_IND_ELLOS"] = new VerbForm( Verb.COP_IND_YO"],
-		 * , "(.*)->1,n "]} ] );
-		 */
+
+		forms.put(Verb.COP_IND_NOSOTROS,
+				new VerbForm(forms.get(Verb.COP_IND_YO), "ser->", "ir->", "(.*)aba->1,ábamos", "(.*)->1,mos"));
+
+		forms.put(Verb.COP_IND_VOS, new VerbForm(forms.get(Verb.COP_IND_YO), "(.*)->1,is"));
+
+		forms.put(Verb.COP_IND_ELLOS, new VerbForm(forms.get(Verb.COP_IND_YO), "(.*)->1,n"));
+
 		forms.put(Verb.PRET_IND_YO,
 				new VerbForm("dar->di", "andar->anduve", "desandar->desanduve", "ser->fui", "ver->vi", "caber->quepo",
 						"haber->hube", "contrahacer->contrahíce", "ir->fui", "(.*)gar->1,gué", "(.*)guar->1,güé",
@@ -151,30 +148,27 @@ public class Conjugator {
 
 		forms.put(Verb.PRET_IND_NOSOTROS, new VerbForm(forms.get(Verb.PRET_IND_TU), "(.*)ste->1,mos"));
 
-		/*
-		 * new VerbForm(Verb.PRET_IND_USTEDES, { "ser","fueron", "ir","fueron",
-		 * "desdar","desdieron" }, [
-		 * "(.*)venir ->quitar venir, sustituir por vinieron "(.*) ar &&
-		 * this.PRET_IND_EL.endsWith("o") ->
-		 * this.PRET_IND_ELLOS.endsWith("ieron") new
-		 * Rule("(.*)ar && this.PRET_IND_EL.endsWith("ó") ->
-		 * this.PRET_IND_ELLOS.endsWith("aron") new
-		 * Rule("(.*)ar, es monosilabico y && this.PRET_IND_EL.endsWith("o")
-		 * ->this.PRET_IND_ELLOS.endsWith("aron") //
-		 * 
-		 * 
-		 * "(.*)ir && !this.PRET_IND_EL.endsWith("
-		 * ó") //&& this.PRET_IND_ELLOS.endsWith("eron") "(.*)ir &&
-		 * this.PRET_IND_EL.endsWith("o") //&&
-		 * this.PRET_IND_ELLOS.endsWith("eron")
-		 * 
-		 * "(.*)er && this.PRET_IND_EL.endsWith("
-		 * o") && !this.PRET_IND_ELLOS.endsWith("ieron") "(.*)er &&
-		 * this.PRET_IND_EL.endsWith("jo") &&
-		 * !this.PRET_IND_ELLOS.endsWith("jeron")
-		 * "(.*)er && this.PRET_IND_EL.endsWith("
-		 * ó") && this.PRET_IND_ELLOS.endsWith("eron") ] );
-		 */
+		forms.put(Verb.PRET_IND_USTEDES, new VerbForm(
+
+				Rules.r("ser->fueron"), Rules.r("ir->fueron"), Rules.r("desdar->desdieron"),
+				Rules.r("(.*)venir->1,vinieron"),
+				Rules.r(forms.get(Verb.PRET_IND_EL), "(.*)o", new Rule[] { Rules.r("(.*)ar") },
+						new String[] { "1", "ieron" }),
+				Rules.r(forms.get(Verb.PRET_IND_EL), "(.*)ó", new Rule[] { Rules.r("(.*)ar") },
+						new String[] { "1", "aron" }),
+				Rules.r(forms.get(Verb.PRET_IND_EL), "(.*)o", new Rule[] { Rules.mr("(.*)ar") },
+						new String[] { "1", "aron" }),
+				Rules.r(forms.get(Verb.PRET_IND_EL), "(.*)ó", new Rule[] { Rules.r("(.*)ir") },
+						new String[] { "1", "eron" }),
+				Rules.r(forms.get(Verb.PRET_IND_EL), "(.*)o", new Rule[] { Rules.r("(.*)ir") },
+						new String[] { "1", "eron" }),
+				Rules.r(forms.get(Verb.PRET_IND_EL), "(.*)o", new Rule[] { Rules.r("(.*)er") },
+						new String[] { "1", "ieron" }),
+				Rules.r(forms.get(Verb.PRET_IND_EL), "(.*)jo", new Rule[] { Rules.r("(.*)er") },
+						new String[] { "1", "jeron" }),
+				Rules.r(forms.get(Verb.PRET_IND_EL), "(.*)ó", new Rule[] { Rules.r("(.*)er") },
+						new String[] { "1", "eron" })));
+
 		forms.put(Verb.PRET_IND_ELLOS, forms.get(Verb.PRET_IND_USTEDES));
 
 		forms.put(Verb.FUT_IND_YO,
@@ -186,61 +180,38 @@ public class Conjugator {
 
 		forms.put(Verb.FUT_IND_VOS, new VerbForm(forms.get(Verb.FUT_IND_YO), "(.*)->1,is"));
 
-		/*
-		 * new VerbForm(Verb.FUT_IND_EL"] = new VerbForm( Verb.FUT_IND_YO"], {},
-		 * [ "(.*)é->1,á"]} ] );
-		 * 
-		 * new
-		 * VerbForm(Verb.FUT_IND_NOSOTROS"] = new VerbForm( Verb.FUT_IND_YO"], ,
-		 * "(.*)é->1,emos"]} ] );
-		 * 
-		 * new VerbForm(Verb.FUT_IND_ELLOS"] = new VerbForm( Verb.FUT_IND_EL"],
-		 * , "(.*)->1,n"]} ] );
-		 * 
-		 * new VerbForm(Verb.POS_IND_YO, , "(.*)ar->1,ía",
-		 * 
-		 * "(.*)(ten|pon|val|po)er->1,2,dría", "(.*)(querer->1,2,querría", new
-		 * Rule("(.*)(h|f)acer->1,2,ría", "(.*)(c|h|s)aber->1,2,abría",
-		 * "(.*)er->1,ía",
-		 * 
-		 * "(.*)(ven|sal)ir->1,2,dría", "(.*)decir->1,diría", "(.*)enserir->1,
-		 * "enseriaría ", "(.*)ir->1,ía", ] );
-		 * 
-		 * new VerbForm(Verb.POS_IND_TU"] = new VerbForm( Verb.POS_IND_YO"], {},
-		 * [ "(.*)->1,s"]} ] );
-		 * 
-		 * new VerbForm(Verb.POS_IND_VOSEO"] = Verb.POS_IND_TU"];
-		 * 
-		 * new VerbForm(Verb.POS_IND_VOS"] = new VerbForm( Verb.POS_IND_YO"], ,
-		 * "(.*)ía->1,íais"]} ] );
-		 * 
-		 * new VerbForm(Verb.POS_IND_EL"] = Verb.POS_IND_YO"];
-		 * 
-		 * 
-		 * new
-		 * VerbForm(Verb.POS_IND_NOSOTROS"] = new VerbForm( Verb.POS_IND_YO"], ,
-		 * "(.*)->1,mos"]} ] );
-		 * 
-		 * new VerbForm(Verb.POS_IND_USTEDES"] = Verb.PRET_IND_ELLOS"];
-		 * 
-		 * 
-		 * new VerbForm(Verb.POS_IND_ELLOS"] = new VerbForm( Verb.POS_IND_YO"],
-		 * , "(.*)->1,n"]} ] );
-		 * 
-		 * new VerbForm(Verb.PRES_SUB_YO"] = new VerbForm( Verb.PRES_IND_YO"], {
-		 * "ser","sea", "ir","vaya", "enserir","enserie" }, [ new
-		 * Rule("(.*)->1,n"]}
-		 * 
-		 * "(.*)oy->1,é", "(.*)go->1,gue", "(.*)zo->1,ce", "(.*)co->1, "que " ),
-		 * "(.*)guo->1,güe",
-		 * 
-		 * && INF terminar ar y "(.*)o") ->PRES_IND_YO quitar o, e
-		 * 
-		 * && INF terminar er o ir y this.PRES_IND_YO.endsWith("o") ->
-		 * PRES_IND_YO quitar o, a
-		 * 
-		 * ] );
-		 */
+		forms.put(Verb.FUT_IND_EL, new VerbForm(forms.get(Verb.FUT_IND_YO), "(.*)é->1,á"));
+
+		forms.put(Verb.FUT_IND_NOSOTROS, new VerbForm(forms.get(Verb.FUT_IND_YO), "(.*)é->1,emos"));
+
+		forms.put(Verb.FUT_IND_ELLOS, new VerbForm(forms.get(Verb.FUT_IND_EL), "(.*)->1,n"));
+
+		forms.put(Verb.POS_IND_YO, new VerbForm("(.*)ar->1,ía", "(.*)(ten|pon|val|po)er->1,2,dría",
+				"(.*)(querer->1,2,querría", "(.*)(h|f)acer->1,2,ría", "(.*)(c|h|s)aber->1,2,abría", "(.*)er->1,ía",
+				"(.*)(ven|sal)ir->1,2,dría", "(.*)decir->1,diría", "(.*)enserir->1,enseriaría", "(.*)ir->1,ía"));
+
+		forms.put(Verb.POS_IND_TU, new VerbForm(forms.get(Verb.POS_IND_YO), "(.*)->1,s"));
+
+		forms.put(Verb.POS_IND_VOSEO, forms.get(Verb.POS_IND_TU));
+
+		forms.put(Verb.POS_IND_VOS, new VerbForm(forms.get(Verb.POS_IND_YO), "(.*)ía->1,íais"));
+
+		forms.put(Verb.POS_IND_EL, forms.get(Verb.POS_IND_YO));
+
+		forms.put(Verb.POS_IND_NOSOTROS, new VerbForm(forms.get(Verb.POS_IND_YO), "(.*)->1,mos"));
+
+		forms.put(Verb.POS_IND_USTEDES, forms.get(Verb.PRET_IND_ELLOS));
+
+		forms.put(Verb.POS_IND_ELLOS, new VerbForm(forms.get(Verb.POS_IND_YO), "(.*)->1,n"));
+
+		forms.put(Verb.PRES_SUB_YO,
+				new VerbForm(forms.get(Verb.PRES_IND_YO), Rules.r("ser->sea"), Rules.r("ir->vaya"),
+						Rules.r("enserir->enserie"), Rules.r("(.*)oy->1,é"), Rules.r("(.*)go->1,gue"),
+						Rules.r("(.*)zo->1,ce"), Rules.r("(.*)co->1,que"), Rules.r("(.*)guo->1,güe"),
+						Rules.r("(.*)o", new Rule[] { Rules.r("(.*)ar") }, new String[] { "1", "e" }),
+						Rules.r("(.*)o", new Rule[] { Rules.r("(.*)(e|i)r") }, new String[] { "1", "a" }),
+						Rules.r("(.*)->1,n")));
+
 		forms.put(Verb.PRES_SUB_TU, new VerbForm(forms.get(Verb.PRES_SUB_YO), "dar->", "(.*)->1"));
 
 		forms.put(Verb.PRES_SUB_NOSOTROS,
