@@ -28,6 +28,7 @@ public class VerbForm {
 	
 	
 	public String conjugate(String form) {
+		System.out.println(root + " " + form);
 		if (root != null)
 			form = root.conjugate(form);
 

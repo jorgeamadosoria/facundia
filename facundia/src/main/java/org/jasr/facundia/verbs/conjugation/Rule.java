@@ -27,14 +27,17 @@ public class Rule implements Conjugation {
 	public Rule(VerbForm root, String replacePattern, Rule[] patterns, String[] groups, boolean monosyl) {
 		this.root = root;
 		this.replacePattern = Pattern.compile(patternize(replacePattern));
-		this.matchPatterns = Arrays.stream(patterns).collect(Collectors.toList());
-		this.matchPatterns.add(Rules.r(replacePattern));
+		if (patterns != null)
+			this.matchPatterns = Arrays.stream(patterns).collect(Collectors.toList());
+		else
+			this.matchPatterns = new ArrayList<>();
 		this.groups = groups;
 	}
 
 	@Override
 	public boolean matches(String form) {
-		return matchPatterns.stream().allMatch(pattern -> pattern.matches(form));
+		return this.replacePattern.matcher(form).matches()
+				&& matchPatterns.stream().allMatch(pattern -> pattern.matches(form));
 	}
 
 	@Override
