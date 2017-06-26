@@ -1,6 +1,7 @@
 package org.jasr.facundia.verbs;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import org.jasr.facundia.verbs.conjugation.Conjugation;
 import org.jasr.facundia.verbs.conjugation.Rules;
@@ -8,38 +9,65 @@ import org.jasr.facundia.verbs.conjugation.Rules;
 public class VerbForm {
 	private Conjugation[] conjugations;
 	private VerbForm root;
+	private Verb form;
 
-	public VerbForm(VerbForm root,String... conjugations) {
-		this(root,Rules.rules(conjugations));
-	}
-	
-	public VerbForm(String... conjugations) {
-		this(null,Rules.rules(conjugations));
-	}
-	
-	public VerbForm(Conjugation... conjugations) {
-		this(null,conjugations);
+	public VerbForm(Verb form, VerbForm root, String... conjugations) {
+		this(form, root, Rules.rules(conjugations));
 	}
 
-	public VerbForm(VerbForm root, Conjugation... conjugations) {
+	public VerbForm(Verb form, String... conjugations) {
+		this(null, Rules.rules(conjugations));
+	}
+
+	public VerbForm(Verb form, Conjugation... conjugations) {
+		this(form, null, conjugations);
+	}
+
+	public VerbForm(Verb form, VerbForm root, Conjugation... conjugations) {
+		this.form = form;
 		this.root = root;
 		this.conjugations = conjugations;
 	}
-	
-	
-	public String conjugate(String form) {
-		System.out.println(root + " " + form);
+
+	public String conjugate(String infinitive) {
+		// System.out.println("ROOT:" + root);
+		String form = infinitive;
 		if (root != null)
-			form = root.conjugate(form);
+			form = root.conjugate(infinitive);
 
 		if (conjugations != null)
-			return doConjugate(form);
+			return doConjugate(infinitive,form);
 		return form;
 	}
 
-	private String doConjugate(String form) {
+	private String doConjugate(String infinitive,String form) {
+		Optional<Conjugation> res = Arrays.stream(conjugations).sequential()
+				.filter(conjugation -> filter(infinitive,form, conjugation)).findFirst();
 
-		return Arrays.stream(conjugations).sequential().filter(conjugation -> conjugation.matches(form)).findFirst()
-				.get().conjugate(form);
+		if (res.isPresent())
+			return res.get().conjugate(infinitive);
+		else
+			return "NOT FOUND";
 	}
+
+	private boolean filter(String infinitive,String form, Conjugation conjugation) {
+//		if (conjugation.matches(infinitive))
+//			System.out.println(conjugation.toString() + " - " + conjugation.matches(infinitive) + " - " + form);
+		return conjugation.matches(infinitive);
+	}
+
+	@Override
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+
+		if (form != null)
+			sb.append(form.name() + " ");
+
+		if (root != null)
+			sb.append(root.toString() + " ");
+
+		return sb.toString();
+	}
+
 }
