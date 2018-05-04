@@ -45,7 +45,7 @@ public class VerbForm {
 				.filter(conjugation -> filter(infinitive,form, conjugation)).findFirst();
 
 		if (res.isPresent())
-			return res.get().conjugate(infinitive);
+			return res.get().conjugate(infinitive); 
 		else
 			return "NOT FOUND";
 	}

@@ -1,10 +1,9 @@
 package org.jasr.facundia;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.io.File;
 import java.io.FileReader;
-import java.io.InputStreamReader;
 import java.io.LineNumberReader;
 import java.net.URL;
 
@@ -23,15 +22,8 @@ public class ConjugatorTest {
 		this.conjugator = new Conjugator();
 	}
 
-	// @Test
-	// public void happyPathTest(){
-	//
-	// conjugator.conjugate("herir").entrySet().forEach(entry ->
-	// System.out.println(entry.getKey()+"-"+entry.getValue()));
-	// }
-	//
 	@Test
-	public void singleFormTest() throws Exception {
+	public void PRES_IND_YOTest() throws Exception {
 
 		Verb form = Verb.PRES_IND_YO;
 boolean fail = false;
@@ -44,13 +36,13 @@ boolean fail = false;
 			String[] forms = csv.readLine().split(",");
 			String conjugation = conjugator.conjugate(forms[Verb.INF.ordinal()].trim(), form);
 
-			if (!StringUtils.equals(conjugation, forms[form.ordinal()].trim()))
+			if (!StringUtils.equals(conjugation.trim(), forms[form.ordinal()].trim())){
 				 fail = true;
 				System.out.println(forms[Verb.INF.ordinal()].trim() + " -> "+ conjugation + " = " + forms[form.ordinal()].trim());
-			// System.out.println(StringUtils.equals(conjugation,
-			// forms[form.ordinal()])?"OK":"NO");
+			}
 
 		}
+		csv.close();
 		
 		assertEquals(false, fail);
 	}

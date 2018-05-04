@@ -67,7 +67,8 @@ public class Conjugator {
 				"(.*)eír->1,ío", "(.*)desvaír->1,desvayo",
 				"dar->doy","desdar->desdoy","(.*)olgar->1,uelgo", "(.*)eguir->1,igo",
 				"(.*)(c|n|s|pl|fr)egar->1,2,iego",
-				"(.*)(c|graf|gu|ch|j|conf|ist|cuant|hast|atav|env|cr|fr|var|sar|)iar->1,2,ío",
+				"(.*)(ac|graf|gu|ch|j|conf|ist|cuant|hast|atav|env|cr|fr|var|sar|)iar->1,2,ío",
+				"(.*)(c|idr|ed|imp|mb|ud|or|od|or)iar->1,2,io",
 				"(.*)(d|ac|rec|sarm|cal|v|as)entar->1,2,iento", "(.*)(c|t)ostar->1,2,uesto",
 				"(.*)(cons|v)olar->1,2,uelo", "(.*)(a|o)hijar->1,2,ahíjo", "(.*)aislar->1,aíslo",
 				"(.*)(m|p)oblar->1,2,ueblo", "(.*)(tr|cl|fl|ll)ocar->1,2,ueco", "(.*)higar->1,hígo",
@@ -291,7 +292,7 @@ public class Conjugator {
 		return forms.get(form).conjugate(infinitive);
 	}
 
-	public Map<Verb, String> conjugate(String infinitive) {
+	public Map<Verb, String> conjugate(final String infinitive) {
 		return forms.keySet().stream()
 				.collect(Collectors.toMap(key -> key, key -> {
 				//	System.out.println(key);
