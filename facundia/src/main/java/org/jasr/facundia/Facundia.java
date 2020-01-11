@@ -2,13 +2,11 @@ package org.jasr.facundia;
 
 import java.math.BigInteger;
 import java.util.List;
-import java.util.Map;
 
 import org.jasr.facundia.cardinal.CardinalNumber;
 import org.jasr.facundia.inflector.rules.RuleChain;
 import org.jasr.facundia.syllabes.Syllaber;
 import org.jasr.facundia.verbs.Conjugator;
-import org.jasr.facundia.verbs.Verb;
 
 public class Facundia {
 
@@ -23,8 +21,8 @@ public class Facundia {
         return null;
     }
     
-    public Map<Verb,String> conjugate(String infinitive) {
-        return conjugator.conjugate(infinitive);
+    public String[] conjugate(String infinitive) {
+        return conjugator.conjugate(infinitive).getVerbArray();
     }
 
     public String cardinal(String number) {

@@ -1,15 +1,11 @@
 package org.jasr.facundia;
 
-import static org.junit.Assert.*;
+import java.io.IOException;
+import java.util.Arrays;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.LineNumberReader;
-import java.net.URL;
-
-import org.apache.commons.lang3.StringUtils;
+import org.jasr.facundia.verbs.Conjugacion;
 import org.jasr.facundia.verbs.Conjugator;
-import org.jasr.facundia.verbs.Verb;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -23,28 +19,65 @@ public class ConjugatorTest {
 	}
 
 	@Test
-	public void PRES_IND_YOTest() throws Exception {
-
-		Verb form = Verb.PRES_IND_YO;
-boolean fail = false;
-		URL url = Thread.currentThread().getContextClassLoader().getResource("verbs.csv");
-		File file = new File(url.getPath());
-		LineNumberReader csv = new LineNumberReader(new FileReader(file));
-
-		while (csv.ready()) {
-
-			String[] forms = csv.readLine().split(",");
-			String conjugation = conjugator.conjugate(forms[Verb.INF.ordinal()].trim(), form);
-
-			if (!StringUtils.equals(conjugation.trim(), forms[form.ordinal()].trim())){
-				 fail = true;
-				System.out.println(forms[Verb.INF.ordinal()].trim() + " -> "+ conjugation + " = " + forms[form.ordinal()].trim());
+	public void conjugate() throws IOException {
+	/*	Path path = Paths.get("different.txt");
+		(new File("different.txt")).delete();
+		(new File("different.txt")).createNewFile();
+		Path path2 = Paths.get("data-copy.txt");
+		(new File("data-copy.txt")).delete();
+		(new File("data-copy.txt")).createNewFile();
+		Files.write(path, "Reverse\t".getBytes(), StandardOpenOption.APPEND);
+		Arrays.stream(FormasVerbales.values()).forEach(c -> {
+			try {
+				Files.write(path, (c.toString() + "\t").getBytes(), StandardOpenOption.APPEND);
+				Files.write(path2, (c.toString() + "\t").getBytes(), StandardOpenOption.APPEND);
+			} catch (IOException e1) {
+				e1.printStackTrace();
 			}
-
-		}
-		csv.close();
+		});
+		Files.write(path, "\n".getBytes(), StandardOpenOption.APPEND);
+		Files.write(path2, "\n".getBytes(), StandardOpenOption.APPEND);
 		
-		assertEquals(false, fail);
+
+		try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data.txt"), "UTF8"))) {
+
+			String cLine = br.readLine();
+			Conjugacion modelConj = new Conjugacion(cLine.split("\t"));
+			while ((cLine = br.readLine()) != null) {
+				modelConj = new Conjugacion(cLine.split("\t"));
+				Conjugacion testConj = conjugator.conjugate(modelConj.getForma(FormasVerbales.INFINITIVO));
+				if (!modelConj.equals(testConj)) {
+					Files.write(path2, modelConj.toString().getBytes(), StandardOpenOption.APPEND);
+					Files.write(path, new StringBuilder(modelConj.getForma(FormasVerbales.INFINITIVO)).reverse().toString().getBytes(), StandardOpenOption.APPEND);
+					Files.write(path, "\t".getBytes(), StandardOpenOption.APPEND);
+					Files.write(path, modelConj.getForma(FormasVerbales.INFINITIVO).getBytes(), StandardOpenOption.APPEND);
+					Files.write(path, "\t".getBytes(), StandardOpenOption.APPEND);
+					for (int i = 1; i < modelConj.getVerbArray().length; i++) {
+						if (!modelConj.getVerbArray()[i].equals(testConj.getVerbArray()[i])) {
+							Files.write(path, modelConj.getVerbArray()[i].getBytes(), StandardOpenOption.APPEND);
+							Files.write(path, "!!".toString().getBytes(), StandardOpenOption.APPEND);
+							Files.write(path, testConj.getVerbArray()[i].getBytes(), StandardOpenOption.APPEND);
+						}
+						else {
+							Files.write(path, ".".getBytes(), StandardOpenOption.APPEND);
+							
+						}
+						Files.write(path, "\t".getBytes(), StandardOpenOption.APPEND);
+					}
+					Files.write(path, "\n".getBytes(), StandardOpenOption.APPEND);
+				} 
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+*/
+		Conjugacion testConj = conjugator.conjugate("jugar");
+		for (String c : testConj.getVerbArray()) {
+			System.out.print(c + "\t");
+		}
+		Arrays.stream(testConj.getVerbArray()).forEach(Assert::assertNotNull);
+	
+		System.out.println("");
 	}
 
 }
