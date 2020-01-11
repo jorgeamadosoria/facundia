@@ -13,11 +13,11 @@ public class SubjPresYo extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] { 
-		{ "estar", ".*", "esté" }, 
+		{ "estar", ".*", "estÃ©" }, 
 		{ "caber", ".*", "quepa" }, 
 		{ "haber", ".*", "haya" }, 
-		{ "desdar", ".*", "desdé" }, 
-		{ "dar", ".*", "dé" }, 
+		{ "desdar", ".*", "desdÃ©" }, 
+		{ "dar", ".*", "dÃ©" }, 
 		{ "ir", ".*", "vaya" }, 
 		{ "ser", ".*", "sea" }, 
 		{ "saber", ".*", "sepa" }, 
@@ -26,11 +26,11 @@ public class SubjPresYo extends ConjugadorBase {
  
 		{ ".*", "(.*)ca", "$1que" }, 
 		{ ".*", "(.*)ga", "$1gue" }, 
-		{ ".*", "(.*)gua", "$1güe" }, 
-		{ ".*", "(.*)ua", "$1úe" }, 
+		{ ".*", "(.*)gua", "$1gÃ¼e" }, 
+		{ ".*", "(.*)ua", "$1Ãºe" }, 
 		{ ".*", "(.*)za", "$1ce" }, 
 		{ ".*", "(.*)a", "$1e" }, 
-		{ ".*", "(.*)vé", "$1vea" }, 
+		{ ".*", "(.*)vÃ©", "$1vea" }, 
 		{ ".*", "(.*)ase", "$1asga" },
 			{ ".*", "(.*)gue", "$1ga" }, 
 			{ ".*", "(.*)(y|pl|n|p)ace", "$1$2azca" }, 

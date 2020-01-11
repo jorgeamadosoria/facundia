@@ -13,8 +13,8 @@ public class SubjPretNos extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] { 
-		{".*","(.*)era","$1éramos"},
-		{".*","(.*)ara","$1áramos"}
+		{".*","(.*)era","$1Ã©ramos"},
+		{".*","(.*)ara","$1Ã¡ramos"}
 	};
 	}
 }

@@ -16,7 +16,7 @@ public class IndPresNos extends ConjugadorBase {
 	return new String[][] {
 		{ "haber", "haber", "hemos" }, 
 		{ "ser", "ser", "somos" }, { "ir", "ir", "vamos" }, { ".*", "(.*)ar", "$1amos" }, 
-		{ ".*", "(.*)ir", "$1imos" }, { ".*", "(.*)er", "$1emos" }, { ".*", "(.*)ír", "$1ímos" }
+		{ ".*", "(.*)ir", "$1imos" }, { ".*", "(.*)er", "$1emos" }, { ".*", "(.*)Ã­r", "$1Ã­mos" }
 	
 	};
 

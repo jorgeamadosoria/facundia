@@ -16,13 +16,13 @@ public class IndPretTuVos extends ConjugadorBase {
 		{ "fiar", "fie", "fiaste" }, { "guiar", "guie", "guiaste" }, { "liar", "lie", "liaste" }, 
 		{ "miar", "mie", "miaste" }, { "piar", "pie", "piaste" }, { "puar", "pue", "puaste" }, 
 		{ "ruar", "rue", "ruaste" }, { "triar", "trie", "triaste" }, 
-		{ ".*r", "(.*)(a|e|o)í", "$1$2íste" }, { ".*hacer", "(.*)híce", "$1hiciste" }, 
-		{ ".*r", "(.*)í", "$1iste" },
-		{ ".*r", "(.*)i", "$1iste" }, { ".*r", "(.*)cé", "$1zaste" }, 
-		{ ".*r", "(.*)güé", "$1guaste" }, 
-		{ ".*r", "(.*)gué", "$1gaste" }, { ".*r", "(.*)qué", "$1caste" }, 
+		{ ".*r", "(.*)(a|e|o)Ã­", "$1$2Ã­ste" }, { ".*hacer", "(.*)hÃ­ce", "$1hiciste" }, 
+		{ ".*r", "(.*)Ã­", "$1iste" },
+		{ ".*r", "(.*)i", "$1iste" }, { ".*r", "(.*)cÃ©", "$1zaste" }, 
+		{ ".*r", "(.*)gÃ¼Ã©", "$1guaste" }, 
+		{ ".*r", "(.*)guÃ©", "$1gaste" }, { ".*r", "(.*)quÃ©", "$1caste" }, 
 		{ ".*r", "(.*)e", "$1iste" }, 
-		{ ".*r", "(.*)é", "$1aste" } };
+		{ ".*r", "(.*)Ã©", "$1aste" } };
 	
 	
 	}

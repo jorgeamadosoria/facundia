@@ -15,16 +15,16 @@ public class ImpTu extends ConjugadorBase {
 	return new String[][] {
 			{ "haber", "ha", "he" }, 
 			{ "decir", "dice", "di" }, 
-			{ "ser", "es", "sé" }, { "ir", "va", "ve" }, 
+			{ "ser", "es", "sÃ©" }, { "ir", "va", "ve" }, 
 			{ "poner", "pone", "pon" }, 
 			{ "tener", "tiene", "ten" }, { "venir", "viene", "ven" },
 			{ ".*", "(.*)(satisf|y|pl|p|n)ace", "$1$2ace" }, 
 			{ ".*", "(.*)ace", "$1az" }, 
-			{ ".*", "(re|entre)dice", "$1dí" }, 
+			{ ".*", "(re|entre)dice", "$1dÃ­" }, 
 			{ ".*", "(.*)dice", "$1dice" }, 
 			{ ".*", "(.*)sale", "$1sal" }, 
-			{ ".*", "(.*)pone", "$1pón" }, 
-			{ ".*", "(.*)(v|t)iene", "$1$2én" }, 
+			{ ".*", "(.*)pone", "$1pÃ³n" }, 
+			{ ".*", "(.*)(v|t)iene", "$1$2Ã©n" }, 
 			{ ".*", "(.*)", "$1" }
 	};
 	}

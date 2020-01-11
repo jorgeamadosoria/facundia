@@ -13,7 +13,7 @@ public class SubjPresTuVos extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] {
-		{ "dar", "dé", "des" },
+		{ "dar", "dÃ©", "des" },
 		{".*","(.*)","$1s"}
 	};
 

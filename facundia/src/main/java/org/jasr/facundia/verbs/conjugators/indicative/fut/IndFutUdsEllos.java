@@ -12,6 +12,6 @@ public class IndFutUdsEllos extends ConjugadorBase {
 	}
 	public String[][] getReglas(){
 		
-	return new String[][] {{ ".*", "(.*)é", "$1án" } };
+	return new String[][] {{ ".*", "(.*)Ã©", "$1Ã¡n" } };
 	}
 }

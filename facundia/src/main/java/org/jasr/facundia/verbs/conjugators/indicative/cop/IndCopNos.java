@@ -11,6 +11,6 @@ public class IndCopNos extends ConjugadorBase {
 	}
 	public String[][] getReglas(){
 		
-	return new String[][] { { "ser", "era", "éramos" }, { "ir", "iba", "íbamos" }, { ".*", "(.*)aba", "$1ábamos" }, { ".*", "(.*)ía", "$1íamos" } };
+	return new String[][] { { "ser", "era", "Ã©ramos" }, { "ir", "iba", "Ã­bamos" }, { ".*", "(.*)aba", "$1Ã¡bamos" }, { ".*", "(.*)Ã­a", "$1Ã­amos" } };
 	}
 }

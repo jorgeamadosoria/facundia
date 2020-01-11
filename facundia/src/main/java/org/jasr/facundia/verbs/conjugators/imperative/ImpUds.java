@@ -12,7 +12,7 @@ public class ImpUds extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] {
-		{ "dar", "dé", "den" },
+		{ "dar", "dÃ©", "den" },
 		{".*","(.*)","$1n"}};
 	}
 

@@ -17,12 +17,12 @@ public class ImpVos extends ConjugadorBase {
 		{ "chiar", "chiar", "chia" }, 
 		{ "ciar", "ciar", "cia" }, 
 		{ "criar", "criar", "cria" }, 
-		{ "desdar", "desdar", "desdé" }, 
+		{ "desdar", "desdar", "desdÃ©" }, 
 		{ "dar", "dar", "da" }, 
 		{ "fiar", "fiar", "fia" }, 
 		{ "fluir", "fluir", "flui" }, 
 		{ "fruir", "fruir", "frui" }, 
-		{ "ir", "ir", "andá" }, 
+		{ "ir", "ir", "andÃ¡" }, 
 		{ "gruir", "gruir", "grui" }, 
 		{ "guiar", "guiar", "guia" }, 
 		{ "huir", "huir", "hui" }, 
@@ -34,11 +34,11 @@ public class ImpVos extends ConjugadorBase {
 		{ "ruar", "ruar", "rua" }, 
 		{ "triar", "triar", "tria" }, 
 		{ "ver", "ver", "ve" }, 
-		{ ".*", "(.*)ír", "$1í" }, 
-		{ ".*", "(.*)ir", "$1í" }, 
-		{ ".*", "(.*)cer", "$1cé" }, 
-		{ ".*", "(.*)er", "$1é" }, 
-		{ ".*", "(.*)ar", "$1á" }
+		{ ".*", "(.*)Ã­r", "$1Ã­" }, 
+		{ ".*", "(.*)ir", "$1Ã­" }, 
+		{ ".*", "(.*)cer", "$1cÃ©" }, 
+		{ ".*", "(.*)er", "$1Ã©" }, 
+		{ ".*", "(.*)ar", "$1Ã¡" }
 	};
 	}
 

@@ -13,7 +13,7 @@ public class IndFutUdEl extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] {
-		{ ".*", "(.*)é", "$1á" } };
+		{ ".*", "(.*)Ã©", "$1Ã¡" } };
 
 	}
 }

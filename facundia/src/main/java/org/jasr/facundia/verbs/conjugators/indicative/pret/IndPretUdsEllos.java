@@ -11,24 +11,24 @@ public class IndPretUdsEllos extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] { 
-		 { "(dar|freír)", "(fr|d)io", "$1ieron" },
-		 { "(desdar|desleír)", "des(d|l)ió", "des$1ieron" },
+		 { "(dar|freÃ­r)", "(fr|d)io", "$1ieron" },
+		 { "(desdar|desleÃ­r)", "des(d|l)iÃ³", "des$1ieron" },
 		 { "(p|r)uar", "(p|r)uo", "$1uaron" },
-		 { "(reír|ver)","(r|v)io", "$1ieron" },
+		 { "(reÃ­r|ver)","(r|v)io", "$1ieron" },
 		 { "(poder|haber)","(pud|hub)o", "$1ieron" },
-		 { "desvaír", "desvayó", "desvayeron" },
+		 { "desvaÃ­r", "desvayÃ³", "desvayeron" },
 		 { ".*(querer|poner|venir)","(.*)(quis|pus|vin)o","$1$2ieron" },
-		 { ".*(placer|reír)","(.*)(plac|r)ió","$1$2ieron" },
+		 { ".*(placer|reÃ­r)","(.*)(plac|r)iÃ³","$1$2ieron" },
 		 { ".*","(.*)uvo","$1uvieron" },
 		 { ".*aber","(.*)upo","$1upieron" },
-		 { ".+hacer","(.*)ízo","$1icieron" },
-		 { ".*oír", "(.*)oyó", "$1oyeron" },
+		 { ".+hacer","(.*)Ã­zo","$1icieron" },
+		 { ".*oÃ­r", "(.*)oyÃ³", "$1oyeron" },
 		 { ".*(decir|traer|ucir)","(.*)(di|tra|u)jo","$1$2jeron" },
 		 { ".*","fue","fueron" },
 		 { ".*iar","(.*)io","$1iaron" },
 		 { ".*acer","(.*)izo","$1icieron" },
-		 { ".*ar","(.*)ó","$1aron" },
-		 { ".*(i|e)r","(.*)ó","$1eron" }
+		 { ".*ar","(.*)Ã³","$1aron" },
+		 { ".*(i|e)r","(.*)Ã³","$1eron" }
 	};
 
 

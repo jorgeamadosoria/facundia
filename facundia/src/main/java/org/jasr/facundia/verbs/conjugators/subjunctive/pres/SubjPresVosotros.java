@@ -21,8 +21,8 @@ public class SubjPresVosotros extends ConjugadorBase {
 		{ ".*", "miemos", "mieis" }, { ".*", "piemos", "pieis" }, 
 		{ ".*", "puemos", "pueis" }, { ".*", "riamos", "riais" }, 
 		{ ".*", "ruemos", "rueis" }, { ".*", "triemos", "trieis" }, 
-		{ ".*", "(.*)emos", "$1éis" },
-		{ ".*", "(.*)amos", "$1áis" }
+		{ ".*", "(.*)emos", "$1Ã©is" },
+		{ ".*", "(.*)amos", "$1Ã¡is" }
 	
 	};
 	}

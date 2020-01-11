@@ -15,7 +15,7 @@ public class IndPresVosotros extends ConjugadorBase {
 			{ "ver","veis","veis"},
 			//monosyllabic verbs should have their stresses removed.
 			{ "(l|h|gr|fr|fl)uir","(.*)","$1"},		
-			{ "haber", "has", "habéis" }, { ".*", "(.*)es", "$1eis" }, { ".*", "(.*)as", "$1ais" }, { ".*", "(.*)ás", "$1áis" }, { ".*", "(.*)ís", "$1ís" }, { ".*", "(.*)és", "$1éis" } };
+			{ "haber", "has", "habÃ©is" }, { ".*", "(.*)es", "$1eis" }, { ".*", "(.*)as", "$1ais" }, { ".*", "(.*)Ã¡s", "$1Ã¡is" }, { ".*", "(.*)Ã­s", "$1Ã­s" }, { ".*", "(.*)Ã©s", "$1Ã©is" } };
 
 
 

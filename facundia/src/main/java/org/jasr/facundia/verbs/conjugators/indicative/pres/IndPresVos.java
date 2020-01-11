@@ -14,26 +14,26 @@ public class IndPresVos extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] {
-		{ "luir","luía","luis"},
-		{ "huir","huía","huis"},
-		{ "gruir","gruía","gruis"},
-		{ "fruir","fruía","fruis"},
-		{ "fluir","fluía","fluis"},
+		{ "luir","luÃ­a","luis"},
+		{ "huir","huÃ­a","huis"},
+		{ "gruir","gruÃ­a","gruis"},
+		{ "fruir","fruÃ­a","fruis"},
+		{ "fluir","fluÃ­a","fluis"},
 
-		{ "haber", "había", "has" }, 
+		{ "haber", "habÃ­a", "has" }, 
 		{ "dar", "daba", "das" }, 
 		{ "ser", "era", "sos" }, 
 		{ "ir", "iba", "vas" },
 		{ "ver", "ver", "ves" },
 		{ "(ch|c|cr|f|gu|tr|l|m|p)iar", "(ch|c|cr|f|gu|tr|l|m|p)iaba", "$1ias" }, 
 		{ "(p|r)uar", "(p|r)uaba", "$1uas" }, 
-		{ "ver", "veía", "ves" }, 
-		{ "(.*)", "(.*)aba", "$1ás" }, 
-		{ ".*(i|í)r", "(.*)ía", "$1ís" }, 
-		{ ".*ir", "(.*)uía", "$1uis" }, 
-		{ ".*ir", "(.*)ía", "$1és" }, 
-		{ ".*ver", "(.*)veía", "$1vés" }, 
-		{ ".*er", "(.*)ía", "$1és" } 
+		{ "ver", "veÃ­a", "ves" }, 
+		{ "(.*)", "(.*)aba", "$1Ã¡s" }, 
+		{ ".*(i|Ã­)r", "(.*)Ã­a", "$1Ã­s" }, 
+		{ ".*ir", "(.*)uÃ­a", "$1uis" }, 
+		{ ".*ir", "(.*)Ã­a", "$1Ã©s" }, 
+		{ ".*ver", "(.*)veÃ­a", "$1vÃ©s" }, 
+		{ ".*er", "(.*)Ã­a", "$1Ã©s" } 
 		};
 
 	}

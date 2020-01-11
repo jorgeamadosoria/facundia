@@ -14,16 +14,16 @@ public class IndFutYo extends ConjugadorBase {
 	return new String[][] {
 		
 	 
-	  {".*(ven|sal)ir", "(.*)(ven|sal)ir","$1$2dré"},
-                        {".*(pod|quer)er", "(.*)(pod|quer)er","$1$2ré"},
-                        {".*(ten|val|pon)er", "(.*)(ten|val|pon)er","$1$2dré"},
-                        {".*aber", "(.*)aber","$1abré"},
-                        {"(mal|ben)decir", "(mal|ben)decir","$1deciré"},
-                        {".*ecir", "(.*)ecir","$1iré"},
-                        { ".*", "(.*)(y|pl|n|p)acer", "$1$2aceré" },
-                        {".*acer", "(.*)acer","$1aré"},
-                        {".*ír", "(.*)ír","$1iré"},
-                        {".*(a|e|i)r", "(.*)","$1é"},
+	  {".*(ven|sal)ir", "(.*)(ven|sal)ir","$1$2drÃ©"},
+                        {".*(pod|quer)er", "(.*)(pod|quer)er","$1$2rÃ©"},
+                        {".*(ten|val|pon)er", "(.*)(ten|val|pon)er","$1$2drÃ©"},
+                        {".*aber", "(.*)aber","$1abrÃ©"},
+                        {"(mal|ben)decir", "(mal|ben)decir","$1decirÃ©"},
+                        {".*ecir", "(.*)ecir","$1irÃ©"},
+                        { ".*", "(.*)(y|pl|n|p)acer", "$1$2acerÃ©" },
+                        {".*acer", "(.*)acer","$1arÃ©"},
+                        {".*Ã­r", "(.*)Ã­r","$1irÃ©"},
+                        {".*(a|e|i)r", "(.*)","$1Ã©"},
 	};
 
 

@@ -71,7 +71,7 @@ public class ConjugatorTest {
 			e.printStackTrace();
 		}
 */
-		Conjugacion testConj = conjugator.conjugate("jugar");
+		Conjugacion testConj = conjugator.conjugate("falsear");
 		for (String c : testConj.getVerbArray()) {
 			System.out.print(c + "\t");
 		}

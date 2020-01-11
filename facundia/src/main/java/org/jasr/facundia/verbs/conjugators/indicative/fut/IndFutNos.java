@@ -13,7 +13,7 @@ public class IndFutNos extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] {
-		{ ".*", "(.*)แ", "$1emos" } };
+		{ ".*", "(.*)รก", "$1emos" } };
 
 	
 

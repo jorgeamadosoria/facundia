@@ -12,12 +12,12 @@ public class ImpVosotros extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] {
-	{"ir","and·","id"},
-		{".*Ìr", "(.*)Ì","$1Ìd"},
-        {".*dar", "(.*)dÈ","$1dad"},
-        {".*r", "(.*)(·|a)","$1ad"},
-        {".*r", "(.*)(Ì|i)","$1id"},
-        {".*r", "(.*)(È|e)","$1ed"}
+	{"ir","and√°","id"},
+		{".*√≠r", "(.*)√≠","$1√≠d"},
+        {".*dar", "(.*)d√©","$1dad"},
+        {".*r", "(.*)(√°|a)","$1ad"},
+        {".*r", "(.*)(√≠|i)","$1id"},
+        {".*r", "(.*)(√©|e)","$1ed"}
 	};
 	}
 

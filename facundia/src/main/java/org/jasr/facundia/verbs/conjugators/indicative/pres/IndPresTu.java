@@ -14,7 +14,7 @@ public class IndPresTu extends ConjugadorBase {
 		
 	return new String[][] {
 		{ "ser", "es", "eres" }, 
-		{".*", 	"(.*)ohibir", "$1ohíbes"},
+		{".*", 	"(.*)ohibir", "$1ohÃ­bes"},
 		{ ".*", "(.*)", "$1s" } };
 
 

@@ -15,13 +15,13 @@ public class IndCopYo extends ConjugadorBase {
 	return new String[][] {
 			{ "ser", "ser", "era" } 
 			,{ "ir", "ir", "iba" } 
-			,{ ".*", "(.*)o(v|lv)er", "$1o$2ía" }
-			,{ "(preca|atre)ver", "(preca|atre)ver", "$1vía" }
+			,{ ".*", "(.*)o(v|lv)er", "$1o$2Ã­a" }
+			,{ "(preca|atre)ver", "(preca|atre)ver", "$1vÃ­a" }
 			,{ ".*", "(.*)ar", "$1aba" } 
-			,{ ".*", "(.*)ir", "$1ía" } 
-			,{ ".*", "(.*)ír", "$1ía" } 
-			,{ ".*", "(.*)ver", "$1veía" } 
-			,{ ".*", "(.*)er", "$1ía" } 
+			,{ ".*", "(.*)ir", "$1Ã­a" } 
+			,{ ".*", "(.*)Ã­r", "$1Ã­a" } 
+			,{ ".*", "(.*)ver", "$1veÃ­a" } 
+			,{ ".*", "(.*)er", "$1Ã­a" } 
 			};
 	}
 

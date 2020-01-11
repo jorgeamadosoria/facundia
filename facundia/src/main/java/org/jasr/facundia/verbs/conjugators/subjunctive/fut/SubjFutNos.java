@@ -13,8 +13,8 @@ public class SubjFutNos extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] {
-		{ ".*", "(.*)ere", "$1éremos" },
-		{ ".*", "(.*)are", "$1áremos" }
+		{ ".*", "(.*)ere", "$1Ã©remos" },
+		{ ".*", "(.*)are", "$1Ã¡remos" }
 	};
 
 	

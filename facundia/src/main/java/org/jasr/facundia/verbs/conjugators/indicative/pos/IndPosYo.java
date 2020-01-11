@@ -14,16 +14,16 @@ public class IndPosYo extends ConjugadorBase {
 	public String[][] getReglas(){
 		
 	return new String[][] {
-		{ ".*", "(.*)ír", "$1iría" }, 
-		{ ".*", "(mal|ben)decir", "$1deciría" }, 
-		{ ".*", "(.*)ecir", "$1iría" }, 
-		{ ".*", "(.*)(sal|ven)ir", "$1$2dría" },
-		{ ".*", "(.*)(y|pl|n|p)acer", "$1$2acería" },
-		{ ".*", "(.*)acer", "$1aría" }, 
-		{ ".*", "(.*)(pon|ten|val)er", "$1$2dría" }, 
-		{ ".*", "(.*)(co|ba)rrer", "$1$2rrería" },
-		{ ".*", "(.*)(pod|ab|r)er", "$1$2ría" }, 
-		{ ".*", "(.*)", "$1ía" } };
+		{ ".*", "(.*)Ã­r", "$1irÃ­a" }, 
+		{ ".*", "(mal|ben)decir", "$1decirÃ­a" }, 
+		{ ".*", "(.*)ecir", "$1irÃ­a" }, 
+		{ ".*", "(.*)(sal|ven)ir", "$1$2drÃ­a" },
+		{ ".*", "(.*)(y|pl|n|p)acer", "$1$2acerÃ­a" },
+		{ ".*", "(.*)acer", "$1arÃ­a" }, 
+		{ ".*", "(.*)(pon|ten|val)er", "$1$2drÃ­a" }, 
+		{ ".*", "(.*)(co|ba)rrer", "$1$2rrerÃ­a" },
+		{ ".*", "(.*)(pod|ab|r)er", "$1$2rÃ­a" }, 
+		{ ".*", "(.*)", "$1Ã­a" } };
 
 
 	
