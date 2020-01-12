@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.jorgeamadosoria</groupId>
 	<artifactId>facundia</artifactId>
-	<version>2.0.0</version>
+	<version>2.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>facundia</name>
@@ -16,7 +16,7 @@
 		<slf4j.version>1.7.5</slf4j.version>
 		<junit.version>4.11</junit.version>
 		<dfa.version>1.0.1</dfa.version>
-		<jdk.version>1.7</jdk.version>
+		<jdk.version>1.8</jdk.version>
 	</properties>
 	<licenses>
 		<license>
