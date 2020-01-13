@@ -21,6 +21,10 @@ public class Facundia {
         return null;
     }
     
+    public String getVersion() {
+    	return "2.1.5";
+    }
+    
     public String[] conjugate(String infinitive) {
         return conjugator.conjugate(infinitive).getVerbArray();
     }
