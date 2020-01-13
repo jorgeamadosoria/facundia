@@ -22,7 +22,7 @@ public class Facundia {
     }
     
     public String getVersion() {
-    	return "2.1.5";
+    	return "2.1.7";
     }
     
     public String[] conjugate(String infinitive) {
