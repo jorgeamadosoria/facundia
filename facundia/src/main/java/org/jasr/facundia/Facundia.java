@@ -23,7 +23,7 @@ public class Facundia {
     }
     
     public String getVersion() {
-    	return "2.1.7";
+    	return "2.2.0";
     }
     public FormasVerbales[] verbHeaders() {
         return FormasVerbales.values();

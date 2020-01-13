@@ -7,6 +7,12 @@ public class Main {
 	public static void main(String[] args) {
 		Facundia facundia = new Facundia();
 		switch(args[0]) {
+		case "help":
+			System.out.println("Valid commands are: version, syllabicate <word>, cardinal <integer>, plural <word>, conjugate <verb on the infinitive form>");
+			break;
+		case "version":
+			System.out.println(facundia.getVersion());
+			break;
 		case "syllabicate":
 			System.out.println(facundia.syllabicate(args[1]));
 			break;
