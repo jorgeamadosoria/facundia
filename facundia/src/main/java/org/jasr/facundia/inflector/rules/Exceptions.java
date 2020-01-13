@@ -1,6 +1,5 @@
 package org.jasr.facundia.inflector.rules;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -11,7 +10,15 @@ public class Exceptions extends BaseRule {
 
     public Exceptions() {
         super(".*");
-        try (InputStream stream = new FileInputStream("src/main/resources/singularExceptions.properties")) {
+        /*
+        InputStream in = getClass().getResourceAsStream("/file.txt"); 
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        */
+        
+        try (
+        		InputStream stream = Thread.currentThread().getContextClassLoader().getResourceAsStream("singularExceptions.properties")
+        	//	InputStream stream = getClass().getResourceAsStream("singularExceptions.properties")
+        		) {
             exceptions.load(stream);
         }
         catch (IOException e) {
