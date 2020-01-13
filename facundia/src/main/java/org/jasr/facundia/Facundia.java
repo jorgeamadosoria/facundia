@@ -7,6 +7,7 @@ import org.jasr.facundia.cardinal.CardinalNumber;
 import org.jasr.facundia.inflector.rules.RuleChain;
 import org.jasr.facundia.syllabes.Syllaber;
 import org.jasr.facundia.verbs.Conjugator;
+import org.jasr.facundia.verbs.FormasVerbales;
 
 public class Facundia {
 
@@ -24,7 +25,9 @@ public class Facundia {
     public String getVersion() {
     	return "2.1.7";
     }
-    
+    public FormasVerbales[] verbHeaders() {
+        return FormasVerbales.values();
+    }
     public String[] conjugate(String infinitive) {
         return conjugator.conjugate(infinitive).getVerbArray();
     }
