@@ -15,6 +15,7 @@ public class SyllaberTest {
     @Test
     public void happyPathTest(){
         
+    	Assert.assertArrayEquals(new String[] {"co","sa"},facundia.syllabicate("cosa").toArray(new String[0]));
         Assert.assertArrayEquals(new String[] {"sin","gu","lar"},facundia.syllabicate("singular").toArray(new String[0]));
         Assert.assertArrayEquals(new String[] {"plu","ral"},facundia.syllabicate("plural").toArray(new String[0]));
         Assert.assertArrayEquals(new String[] {"pseu","do","cien","cia"},facundia.syllabicate("pseudociencia").toArray(new String[0]));
