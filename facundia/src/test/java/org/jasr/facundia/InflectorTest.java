@@ -17,6 +17,8 @@ public class InflectorTest {
     public void inflectorHappyPathTest(){
         
         Assert.assertEquals("singulares",facundia.inflectWord("singular"));
+        Assert.assertEquals("golf",facundia.inflectWord("golf"));
+        Assert.assertEquals("dixes",facundia.inflectWord("dix"));
         Assert.assertEquals("regímenes",facundia.inflectWord("Régimen"));
         Assert.assertEquals("gérmenes",facundia.inflectWord("germen"));
         Assert.assertEquals("constituciones",facundia.inflectWord("constitución"));
