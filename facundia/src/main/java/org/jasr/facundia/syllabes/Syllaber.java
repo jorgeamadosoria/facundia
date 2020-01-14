@@ -123,6 +123,7 @@ public class Syllaber {
             logger.info(resultingSyllabe);
             logger.info(StringUtils.containsAny(resultingSyllabe, "aeioüuáéíóú")?"true":"false");
             if (StringUtils.containsAny(resultingSyllabe, "aeioüuáéíóú")){
+            	logger.info("Reversing " + new StringBuilder(resultingSyllabe).reverse().toString());
                   result.add(new StringBuilder(resultingSyllabe).reverse().toString());
                   resultingSyllabe = "";
             }
