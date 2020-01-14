@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.jorgeamadosoria</groupId>
 	<artifactId>facundia</artifactId>
-	<version>3.0.6</version>
+	<version>3.0.7</version>
 	<packaging>jar</packaging>
 
 	<name>facundia</name>
