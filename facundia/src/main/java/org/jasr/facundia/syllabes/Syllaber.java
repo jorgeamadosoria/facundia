@@ -113,6 +113,7 @@ public class Syllaber {
         for (Character c : sb.toString().toCharArray())
             dfa.transition(c);
         List<String> syllabes = dfa.getMemento();
+        logger.info("SYLLABER - syllabes - " + syllabes);
         Collections.reverse(syllabes);
         List<String> result = new ArrayList<>();
         String resultingSyllabe = "";
