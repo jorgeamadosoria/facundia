@@ -14,13 +14,15 @@ import org.jasr.dfa.memento.StringsMemento;
 import org.jasr.dfa.transitions.ResetTransition;
 import org.jasr.dfa.transitions.Transition;
 import org.jasr.dfa.transitions.UpdateTransition;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Syllaber {
 
     private Set<Character>                       alphabet = new HashSet<>();
     private Set<State<String>>                   states   = new HashSet<State<String>>();
     private DFA<Character, List<String>, String> dfa;
-    
+    Logger logger = LoggerFactory.getLogger(Syllaber.class);
     private void init() {
 
         Character[] vocalesFuertes = { 'a', 'á', 'e', 'é', 'í', 'o', 'ó', 'ú' };
@@ -115,14 +117,17 @@ public class Syllaber {
         List<String> result = new ArrayList<>();
         String resultingSyllabe = "";
         for (String syllabe : syllabes){
+        	logger.info("SYLLABER - " + syllabe);
+        	
             resultingSyllabe = syllabe + resultingSyllabe;
             if (StringUtils.containsAny(resultingSyllabe, "aeioüuáéíóú")){
                   result.add(new StringBuilder(resultingSyllabe).reverse().toString());
                   resultingSyllabe = "";
             }
         }
-        
+        logger.info("SYLLABER - " + Arrays.toString(result.toArray()));
         dfa.reset();
+        logger.info("SYLLABER - " + Arrays.toString(result.toArray()));
         return result;
     }
     

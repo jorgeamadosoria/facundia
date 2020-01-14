@@ -8,9 +8,11 @@ import org.jasr.facundia.inflector.rules.RuleChain;
 import org.jasr.facundia.syllabes.Syllaber;
 import org.jasr.facundia.verbs.Conjugator;
 import org.jasr.facundia.verbs.FormasVerbales;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Facundia {
-
+	Logger logger = LoggerFactory.getLogger(Facundia.class);
     private RuleChain      rules    = new RuleChain();
     private CardinalNumber cardinal = new CardinalNumber();
     private Syllaber       syllaber = new Syllaber();
