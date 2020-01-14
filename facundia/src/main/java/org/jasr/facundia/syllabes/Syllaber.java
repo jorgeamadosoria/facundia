@@ -120,6 +120,8 @@ public class Syllaber {
         	logger.info("SYLLABER - " + syllabe);
         	
             resultingSyllabe = syllabe + resultingSyllabe;
+            logger.info(resultingSyllabe);
+            logger.info(StringUtils.containsAny(resultingSyllabe, "aeioüuáéíóú")?"true":"false");
             if (StringUtils.containsAny(resultingSyllabe, "aeioüuáéíóú")){
                   result.add(new StringBuilder(resultingSyllabe).reverse().toString());
                   resultingSyllabe = "";
