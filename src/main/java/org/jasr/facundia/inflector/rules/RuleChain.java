@@ -13,6 +13,7 @@ public class RuleChain implements Rule {
     public RuleChain() {
         rules.add(new Exceptions());
         rules.add(new OneLetter());
+        rules.add(new OneSyllabe());
         rules.add(new EndingConsSYX());
         rules.add(new EndingDJLRVowYClubFax());
         rules.add(new EndingSTSISX());

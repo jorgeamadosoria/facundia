@@ -9,7 +9,18 @@ public class Exceptions extends BaseRule {
 
     public Exceptions() {
         super(".*");
-        exceptions.put("cérvix","cérvix");
+        //excepciones linguisticas historicas
+        exceptions.put("el","los");
+        exceptions.put("curriculum","curricula");
+        exceptions.put("currículum","currícula");
+        //----------------------
+        //esdrujulas terminadas en -n
+        exceptions.put("polisíndeton","polisíndeton");
+        exceptions.put("oxímoron","oxímoron");
+
+        //----------------------
+        //invariantes
+        exceptions.put("estriptis","estriptis");
         exceptions.put("kibutz","kibutz");
         exceptions.put("basoto","basoto");
         exceptions.put("golf","golf");
@@ -17,25 +28,8 @@ public class Exceptions extends BaseRule {
         exceptions.put("porno","porno");
         exceptions.put("zarévich","zarévich");
         exceptions.put("cíber","cíber");
-        exceptions.put("oxímoron","oxímoron");
         exceptions.put("paparazzi","paparazzi");
         exceptions.put("multimedia","multimedia");
-        exceptions.put("polisíndeton","polisíndeton");
-        exceptions.put("golf","golf");
-        exceptions.put("ax","axes");
-        exceptions.put("box","boxes");
-        exceptions.put("dix","dixes");
-        exceptions.put("flux","fluxes");
-        exceptions.put("trox","troxes");
-        exceptions.put("saxafrax","saxafraxes");
-        exceptions.put("patax","pataxes");
-        exceptions.put("carcax","carcaxes");
-        exceptions.put("gambox","gamboxes");
-        exceptions.put("gambux","gambuxes");
-        exceptions.put("tex","texes");
-        exceptions.put("decitex","decitexes");
-        exceptions.put("moradux","moraduxes");
-        exceptions.put("almoradux","almoraduxes");
         exceptions.put("windsurf","windsurf");
         exceptions.put("edelweiss","edelweiss");
         exceptions.put("volapuk","volapuk");
@@ -44,7 +38,6 @@ public class Exceptions extends BaseRule {
         exceptions.put("software","software");
         exceptions.put("reggae","reggae");
         exceptions.put("pómez","pómez");
-        exceptions.put("jazz","jazz");
         exceptions.put("semen","semen");
         exceptions.put("nadie","nadie");
         exceptions.put("nada","nada");
@@ -55,14 +48,62 @@ public class Exceptions extends BaseRule {
         exceptions.put("maná","maná");
         exceptions.put("lumpen","lumpen");
         exceptions.put("alzhéimer","alzhéimer");
-        exceptions.put("acarpo","acarpa");
+        exceptions.put("márquetin","márquetin");
+        exceptions.put("cáterin","cáterin");
+        exceptions.put("dieciséis","dieciséis");
+        exceptions.put("acusetas","acusetas");
+        exceptions.put("arrastramuertos","arrastramuertos");
+        exceptions.put("atizacandiles","atizacandiles");
+        exceptions.put("bocazas","bocazas");
+        exceptions.put("buscapleitos","buscapleitos");
+        exceptions.put("buscarruidos","buscarruidos");
+        exceptions.put("chotis","chotis");
+        exceptions.put("comejibias","comejibias");
+        exceptions.put("cortarriendas","cortarriendas");
+        exceptions.put("delays","delays");
+        exceptions.put("géminis","géminis");
+        exceptions.put("gilipollas","gilipollas");
+        exceptions.put("hinchapelotas","hinchapelotas");
+        exceptions.put("iris","iris");
+        exceptions.put("beis","beis");
+        exceptions.put("lavacoches","lavacoches");
+        exceptions.put("ómnibus","ómnibus");
+        exceptions.put("pagafantas","pagafantas");
+        exceptions.put("paratiroides","paratiroides");
+        exceptions.put("piscolabis","piscolabis");
+        exceptions.put("rompetechos","rompetechos");
+        exceptions.put("tiroides","tiroides");
+        exceptions.put("tontopollas","tontopollas");
+        exceptions.put("voltiarepas","voltiarepas");
+        //-----------
+        //terminaciones en -x
+        exceptions.put("cérvix","cérvix");
+        exceptions.put("saxafrax","saxafraxes");
+        exceptions.put("patax","pataxes");
+        exceptions.put("carcax","carcaxes");
+        exceptions.put("gambox","gamboxes");
+        exceptions.put("gambux","gambuxes");
+        exceptions.put("decitex","decitexes");
+        exceptions.put("moradux","moraduxes");
+        exceptions.put("almoradux","almoraduxes");
+
+        //-------------------
+        //terminaciones en -c
         exceptions.put("oc","oques");
+        exceptions.put("frac","fraques");
+        //-------------------
+        //extranjerismos terminados en -y
+        exceptions.put("ferry","ferris");
+        exceptions.put("dandy","dandis");
+        exceptions.put("lobby","lobbies");
+        exceptions.put("proxy","proxies");
+        //-------------------------------
+
+        exceptions.put("baguel","baguels");
+        exceptions.put("acarpo","acarpa");
+
         exceptions.put("noúmeno","noumena");
-        exceptions.put("no","noes");
-        exceptions.put("cu","cúes");
-        exceptions.put("pa","pans");
-        exceptions.put("o","oes");
-        exceptions.put("sí","síes");
+
         exceptions.put("mambí","mambises");
         exceptions.put("sándwich","sándwiches");
         exceptions.put("maquech","maqueches");
@@ -71,32 +112,25 @@ public class Exceptions extends BaseRule {
         exceptions.put("carácter","caracteres");
         exceptions.put("amorá","amoraim");
         exceptions.put("stotinka","stotinki");
-        exceptions.put("curriculum","curricula");
-        exceptions.put("currículum","currícula");
+
         exceptions.put("agnusdéi","agnusdéies");
-        exceptions.put("frac","fraques");
+
+        exceptions.put("record","records");
+
         exceptions.put("almicantarat","almicantarates");
         exceptions.put("pailebot","pailebotes");
         exceptions.put("paquebot","paquebotes");
-        exceptions.put("rob","robes");
-        exceptions.put("ferry","ferris");
-        exceptions.put("lobby","lobbies");
-        exceptions.put("proxy","proxies");
-        exceptions.put("baguel","baguels");
-        exceptions.put("el","los");
         exceptions.put("hipérbaton","hipérbatos");
         exceptions.put("óstracon","óstraca");
         exceptions.put("senior","seniors");
         exceptions.put("spoiler","spoilers");
-        exceptions.put("troll","trolls");
-        exceptions.put("tour","tours");
+
         exceptions.put("aquel","aquellos");
-        exceptions.put("lord","lores");
+
         exceptions.put("áfter","áfters");
         exceptions.put("veintiún","veintiunos");
         exceptions.put("wéstern","wésterns");
         exceptions.put("western","westerns");
-        exceptions.put("raid","raids");
         exceptions.put("hacker","hackers");
         exceptions.put("estand","estands");
         exceptions.put("arráez","arraeces");
@@ -108,33 +142,26 @@ public class Exceptions extends BaseRule {
         exceptions.put("fitoplancton","fitoplánctones");
         exceptions.put("germen","gérmenes");
         exceptions.put("gluten","glútenes");
-        exceptions.put("dieciséis","dieciséis");
-        exceptions.put("acusetas","acusetas");
-        exceptions.put("arrastramuertos","arrastramuertos");
-        exceptions.put("atizacandiles","atizacandiles");
-        exceptions.put("beis","beis");
-        exceptions.put("bocazas","bocazas");
-        exceptions.put("buscapleitos","buscapleitos");
-        exceptions.put("buscarruidos","buscarruidos");
-        exceptions.put("chotis","chotis");
-        exceptions.put("comejibias","comejibias");
-        exceptions.put("cortarriendas","cortarriendas");
-        exceptions.put("delays","delays");
-        exceptions.put("dieciséis","dieciséis");
-        exceptions.put("géminis","géminis");
-        exceptions.put("gilipollas","gilipollas");
-        exceptions.put("hinchapelotas","hinchapelotas");
-        exceptions.put("iris","iris");
+
+        exceptions.put("jazz","jazz");
+
+        exceptions.put("cu","cúes");
+        exceptions.put("pa","pans");
+
+
+        exceptions.put("troll","trolls");
+        exceptions.put("tour","tours");
+        exceptions.put("lord","lores");
+        exceptions.put("raid","raids");
+        exceptions.put("i","íes");
+        exceptions.put("u","úes");
+        exceptions.put("boy","boys");
+        exceptions.put("gay","gais");
+        exceptions.put("guay","guais");
+
+
         exceptions.put("lao","laos");
-        exceptions.put("lavacoches","lavacoches");
-        exceptions.put("ómnibus","ómnibus");
-        exceptions.put("pagafantas","pagafantas");
-        exceptions.put("paratiroides","paratiroides");
-        exceptions.put("piscolabis","piscolabis");
-        exceptions.put("rompetechos","rompetechos");
-        exceptions.put("tiroides","tiroides");
-        exceptions.put("tontopollas","tontopollas");
-        exceptions.put("voltiarepas","voltiarepas");
+
         exceptions.put("imagen","imágenes");
         exceptions.put("joven","jóvenes");
         exceptions.put("margen","márgenes");
@@ -149,21 +176,11 @@ public class Exceptions extends BaseRule {
         exceptions.put("asíndeton","asíndetones");
         exceptions.put("beicon","béicones");
         exceptions.put("carácter","caracteres");
-        exceptions.put("i","íes");
-        exceptions.put("u","úes");
+
         exceptions.put("país","países");
         exceptions.put("rehús","rehúses");
-        exceptions.put("aguapey","aguapeys");
-        exceptions.put("boy","boys");
-        exceptions.put("caituy","caitúis");
-        exceptions.put("coicoy","coicóis");
-        exceptions.put("gay","gais");
-        exceptions.put("guay","guais");
-        exceptions.put("guirigay","guirigais");
-        exceptions.put("jersey","jerseys");
-        exceptions.put("malay","malays");
-        exceptions.put("patay","patays");
-        exceptions.put("estriptis","estriptises");
+        exceptions.put("guirigay","guirigáis");
+        exceptions.put("jersey","jerséis");
         exceptions.put("estriptís","estriptises");
     }
 
